@@ -37,4 +37,5 @@ Muchas gracias por el tiempo que has empleado leyendo esta breve introducción a
 ### Participantes en el desarrollo del proyecto:
 
 Autor: @PachecoASIR
+
 Colaboradores: @FranciscoFerreiraT
