@@ -26,11 +26,19 @@ La idea del proyecto es crear una aplicación de una tienda en la cual los usuar
 
 ### Diagrama de clases:
 
-
+```mermaid
+classDiagram
+  direction RL
+  class Main {
+  }
+```
 
 ### Diagrama de secuencia:
 
-
+```mermaid
+sequenceDiagram
+    participant Main
+```
 
 Muchas gracias por el tiempo que has empleado leyendo esta breve introducción a nuestro proyecto, si deseas ver más informacióna acerca de lo que fue el desarrollo de todo el proyecto puedes acceder a ella desde nuestra página de [Wiki](https://github.com/PachecoASIR/ProyectoTiendaV2/wiki).
 
