@@ -1,7 +1,6 @@
-
 package Controlador;
 
-import Catalogo.CatalogoEstilo;
+import Vista.CatalogoEstilo;
 import Modelo.metodos;
 import Modelo.usuario;
 import Vista.Login;
