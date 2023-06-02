@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package MetodosPago;
+package Vista;
 
 /**
  *
@@ -156,7 +156,9 @@ public class Paypal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        CatalogoEstilo c = new CatalogoEstilo();
+        c.setVisible(true);
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -164,7 +166,9 @@ public class Paypal extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        Completado c = new Completado();
+        c.setVisible(true);
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
     /**
