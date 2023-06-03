@@ -30,6 +30,8 @@ public class metodos {
         return false;
     }
     
+   
+    
     public static boolean Autentificacion(String Puser,String Ppsw){
         Connection cn = Conexion.Conectar();
         PreparedStatement ps = null;
