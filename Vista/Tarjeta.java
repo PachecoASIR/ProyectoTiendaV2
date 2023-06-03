@@ -30,7 +30,7 @@ public class Tarjeta extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        volverTarjeta = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -41,7 +41,7 @@ public class Tarjeta extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        siguienteTarjeta = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
@@ -57,13 +57,13 @@ public class Tarjeta extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/VISA.png"))); // NOI18N
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("VOLVER");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        volverTarjeta.setBackground(new java.awt.Color(0, 0, 0));
+        volverTarjeta.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        volverTarjeta.setForeground(new java.awt.Color(255, 255, 255));
+        volverTarjeta.setText("VOLVER");
+        volverTarjeta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                volverTarjetaActionPerformed(evt);
             }
         });
 
@@ -75,7 +75,7 @@ public class Tarjeta extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(jLabel1)
                 .addGap(377, 377, 377)
-                .addComponent(jButton1)
+                .addComponent(volverTarjeta)
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -83,7 +83,7 @@ public class Tarjeta extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
+                    .addComponent(volverTarjeta)
                     .addComponent(jLabel1))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
@@ -128,11 +128,11 @@ public class Tarjeta extends javax.swing.JFrame {
         jTextField5.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jTextField5.setBorder(null);
 
-        jButton2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton2.setText("SIGUIENTE");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        siguienteTarjeta.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        siguienteTarjeta.setText("SIGUIENTE");
+        siguienteTarjeta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                siguienteTarjetaActionPerformed(evt);
             }
         });
 
@@ -175,7 +175,7 @@ public class Tarjeta extends javax.swing.JFrame {
                                     .addComponent(jTextField6)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(415, 415, 415)
-                        .addComponent(jButton2)))
+                        .addComponent(siguienteTarjeta)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -215,7 +215,7 @@ public class Tarjeta extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(siguienteTarjeta)
                 .addGap(27, 27, 27))
         );
 
@@ -233,11 +233,9 @@ public class Tarjeta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.setVisible(false);
-        CatalogoEstilo c = new CatalogoEstilo();
-        c.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void volverTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverTarjetaActionPerformed
+       
+    }//GEN-LAST:event_volverTarjetaActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
@@ -251,11 +249,9 @@ public class Tarjeta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField6ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.setVisible(false);
-        Completado c = new Completado();
-        c.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void siguienteTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguienteTarjetaActionPerformed
+     
+    }//GEN-LAST:event_siguienteTarjetaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -293,8 +289,6 @@ public class Tarjeta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -314,5 +308,7 @@ public class Tarjeta extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
+    public javax.swing.JButton siguienteTarjeta;
+    public javax.swing.JButton volverTarjeta;
     // End of variables declaration//GEN-END:variables
 }

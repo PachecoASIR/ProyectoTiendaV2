@@ -41,9 +41,9 @@ public class Pendientes extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        volverPendientes = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        comprarPendientes = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
@@ -77,10 +77,10 @@ public class Pendientes extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(204, 204, 0));
         jLabel4.setText("Precio:");
 
-        jButton2.setText("Volver");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        volverPendientes.setText("Volver");
+        volverPendientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                volverPendientesActionPerformed(evt);
             }
         });
 
@@ -88,13 +88,13 @@ public class Pendientes extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(204, 204, 0));
         jLabel5.setText("Atributos");
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 0));
-        jButton3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(204, 204, 0));
-        jButton3.setText("COMPRAR");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        comprarPendientes.setBackground(new java.awt.Color(0, 0, 0));
+        comprarPendientes.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        comprarPendientes.setForeground(new java.awt.Color(204, 204, 0));
+        comprarPendientes.setText("COMPRAR");
+        comprarPendientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                comprarPendientesActionPerformed(evt);
             }
         });
 
@@ -192,12 +192,12 @@ public class Pendientes extends javax.swing.JFrame {
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel20))
-                            .addComponent(jButton3)
+                            .addComponent(comprarPendientes)
                             .addComponent(jLabel3))))
                 .addGap(36, 36, 36))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(volverPendientes)
                 .addGap(369, 369, 369))
         );
         jPanel1Layout.setVerticalGroup(
@@ -236,9 +236,9 @@ public class Pendientes extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(jLabel20))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3)
+                        .addComponent(comprarPendientes)
                         .addGap(49, 49, 49)))
-                .addComponent(jButton2)
+                .addComponent(volverPendientes)
                 .addGap(29, 29, 29))
         );
 
@@ -256,17 +256,13 @@ public class Pendientes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        this.setVisible(false);
-        Direccion c = new Direccion();
-        c.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void comprarPendientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comprarPendientesActionPerformed
+      
+    }//GEN-LAST:event_comprarPendientesActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.setVisible(false);
-        CatalogoEstilo c = new CatalogoEstilo();
-        c.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void volverPendientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverPendientesActionPerformed
+       
+    }//GEN-LAST:event_volverPendientesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -307,8 +303,7 @@ public class Pendientes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    public javax.swing.JButton comprarPendientes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -326,5 +321,6 @@ public class Pendientes extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    public javax.swing.JButton volverPendientes;
     // End of variables declaration//GEN-END:variables
 }
