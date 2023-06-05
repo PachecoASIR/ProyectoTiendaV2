@@ -3,6 +3,8 @@ package Modelo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+
 
 public class metodos {
 
@@ -30,10 +32,16 @@ public class metodos {
         return false;
     }
     
+   
+    
     public static boolean Autentificacion(String Puser,String Ppsw){
         Connection cn = Conexion.Conectar();
         PreparedStatement ps = null;
         ResultSet rs = null;
+        
+        
+        
+        
         
         String sql="select Nombre,Contraseña from usuario where Nombre=? and Contraseña=?";
         try{
@@ -50,8 +58,9 @@ public class metodos {
         }catch (Exception e){
         System.out.println(e);
         
+        
         }
     return false;
-    }
     
+    }
 }

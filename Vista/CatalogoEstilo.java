@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import Controlador.controlador;
+import Modelo.usuario;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
@@ -16,7 +18,7 @@ public class CatalogoEstilo extends javax.swing.JFrame {
 
     public CatalogoEstilo() {
         initComponents();
-        this.setTitle("Logo");
+        this.setTitle("Cuerdotoo");
         Image img = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Images/Logo2.png"));
         Image resizedImg = img.getScaledInstance(60, 50, Image.SCALE_SMOOTH);
         jLabel2.setIcon(new ImageIcon(resizedImg));
@@ -31,13 +33,13 @@ public class CatalogoEstilo extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        Biphone = new javax.swing.JButton();
+        bRolex = new javax.swing.JButton();
+        bPS5 = new javax.swing.JButton();
+        bXBOX = new javax.swing.JButton();
+        bPendientes = new javax.swing.JButton();
+        bCaña = new javax.swing.JButton();
+        irCata2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         Perfil = new javax.swing.JButton();
@@ -88,32 +90,52 @@ public class CatalogoEstilo extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        jButton1.setText("iPhone 14 Pro Max");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Biphone.setText("iPhone 14 Pro Max");
+        Biphone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BiphoneActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Rolex");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        bRolex.setText("Rolex");
+        bRolex.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                bRolexActionPerformed(evt);
             }
         });
 
-        jButton4.setText("PS5");
-
-        jButton5.setText("XBox Series X");
-
-        jButton6.setText("Pendientes Oro 24k");
-
-        jButton7.setText("Caña Pescar");
-
-        jButton2.setText("Página Siguiente");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        bPS5.setText("PS5");
+        bPS5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                bPS5ActionPerformed(evt);
+            }
+        });
+
+        bXBOX.setText("XBox Series X");
+        bXBOX.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bXBOXActionPerformed(evt);
+            }
+        });
+
+        bPendientes.setText("Pendientes Oro 24k");
+        bPendientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bPendientesActionPerformed(evt);
+            }
+        });
+
+        bCaña.setText("Caña Pescar");
+        bCaña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCañaActionPerformed(evt);
+            }
+        });
+
+        irCata2.setText("Página Siguiente");
+        irCata2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                irCata2ActionPerformed(evt);
             }
         });
 
@@ -301,30 +323,30 @@ public class CatalogoEstilo extends javax.swing.JFrame {
                                     .addComponent(jLabel6)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(69, 69, 69)
-                                        .addComponent(jButton3)))
+                                        .addComponent(bRolex)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel22)
                                         .addGap(1, 1, 1))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jButton7)
+                                        .addComponent(bCaña)
                                         .addGap(95, 95, 95)))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(165, 165, 165)
-                                        .addComponent(jButton6))
+                                        .addComponent(bPendientes))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(133, 133, 133)
                                         .addComponent(jLabel24)))
                                 .addGap(229, 229, 229))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(31, 31, 31)
-                                .addComponent(jButton1)
+                                .addComponent(Biphone)
                                 .addGap(273, 273, 273)
-                                .addComponent(jButton4)
+                                .addComponent(bPS5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton5)
+                                .addComponent(bXBOX)
                                 .addGap(288, 288, 288))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -341,7 +363,7 @@ public class CatalogoEstilo extends javax.swing.JFrame {
                                 .addComponent(jLabel23))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGap(491, 491, 491)
-                                .addComponent(jButton2))
+                                .addComponent(irCata2))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGap(403, 403, 403)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -361,7 +383,7 @@ public class CatalogoEstilo extends javax.swing.JFrame {
                         .addGap(12, 12, 12)
                         .addComponent(jLabel23)
                         .addGap(25, 25, 25)
-                        .addComponent(jButton5)
+                        .addComponent(bXBOX)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -371,8 +393,8 @@ public class CatalogoEstilo extends javax.swing.JFrame {
                                     .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jButton1)
-                                        .addComponent(jButton4)))
+                                        .addComponent(Biphone)
+                                        .addComponent(bPS5)))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGap(57, 57, 57)
                                     .addComponent(jLabel4)))
@@ -383,11 +405,11 @@ public class CatalogoEstilo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton7)
-                        .addComponent(jButton6))
-                    .addComponent(jButton3))
+                        .addComponent(bCaña)
+                        .addComponent(bPendientes))
+                    .addComponent(bRolex))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(irCata2)
                 .addGap(36, 36, 36))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(189, 189, 189)
@@ -423,7 +445,34 @@ public class CatalogoEstilo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
      public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+                usuario user = new usuario();
+        Login log = new Login();
+        Registro reg = new Registro();
+        CatalogoNoSesion cns = new CatalogoNoSesion();
+        CatalogoNoSesion2 cns2 = new CatalogoNoSesion2();
+        CatalogoEstilo cata = new CatalogoEstilo();
+        CatalogoEstilo2 cata2 = new CatalogoEstilo2();
+        Perfil Per =new Perfil();
+        Amazon Amazon = new Amazon();
+    Anillo Anillo = new Anillo();
+    Casio Casio = new Casio();
+    Caña Caña = new Caña();
+    Chanel Chanel = new Chanel();
+    Iphone Iphone = new Iphone();
+    Nokia Nokia = new Nokia();
+    PS5 PS5  = new PS5 ();
+    Pendientes Pendientes = new Pendientes();
+    Rolex Rolex = new Rolex();
+    Volante Volante = new Volante();
+    XBOX XBOX  = new XBOX ();
+    //OTROS
+    Direccion direc = new Direccion();
+    Paypal paypal = new Paypal();
+    Tarjeta tarjeta = new Tarjeta();
+Completado completado = new Completado();
+        controlador con = new controlador(log, reg, user,cns,cns2,cata,cata2,Per,Amazon,Anillo,Casio,Caña,Chanel,Iphone,Nokia,PS5,Pendientes,Rolex,Volante,XBOX,direc,paypal,tarjeta,completado);
+        cata.setVisible(true);
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -436,35 +485,51 @@ public class CatalogoEstilo extends javax.swing.JFrame {
         }
 
         java.awt.EventQueue.invokeLater(() -> {
-            new CatalogoEstilo().setVisible(true);
+            
         });
     }
      
     private void PerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PerfilActionPerformed
-        // TODO add your handling code here:
+               
     }//GEN-LAST:event_PerfilActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void BiphoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BiphoneActionPerformed
+       
+    }//GEN-LAST:event_BiphoneActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void irCata2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_irCata2ActionPerformed
+         
+    }//GEN-LAST:event_irCata2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void bRolexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRolexActionPerformed
+         
+    }//GEN-LAST:event_bRolexActionPerformed
+
+    private void bPS5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPS5ActionPerformed
+         
+    }//GEN-LAST:event_bPS5ActionPerformed
+
+    private void bXBOXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bXBOXActionPerformed
+         
+    }//GEN-LAST:event_bXBOXActionPerformed
+
+    private void bCañaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCañaActionPerformed
+        
+     }//GEN-LAST:event_bCañaActionPerformed
+
+    private void bPendientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPendientesActionPerformed
+         
+    }//GEN-LAST:event_bPendientesActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Perfil;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
+    public javax.swing.JButton Biphone;
+    public javax.swing.JButton Perfil;
+    public javax.swing.JButton bCaña;
+    public javax.swing.JButton bPS5;
+    public javax.swing.JButton bPendientes;
+    public javax.swing.JButton bRolex;
+    public javax.swing.JButton bXBOX;
+    public javax.swing.JButton irCata2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

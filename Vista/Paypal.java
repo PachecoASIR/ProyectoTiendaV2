@@ -4,6 +4,12 @@
  */
 package Vista;
 
+import Controlador.controlador;
+import Modelo.usuario;
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Pacheco
@@ -15,7 +21,12 @@ public class Paypal extends javax.swing.JFrame {
      */
     public Paypal() {
         initComponents();
+        this.setTitle("Cuerdotoo");
         this.setResizable(false);
+        Image img = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Images/Logo2.png"));
+        Image resizedImg = img.getScaledInstance(60, 50, Image.SCALE_SMOOTH);
+        ImageIcon icono = new ImageIcon(resizedImg);
+        this.setIconImage(icono.getImage());
     }
 
     /**
@@ -30,12 +41,12 @@ public class Paypal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        volverPaypal = new javax.swing.JToggleButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        siguientePaypal = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,13 +57,13 @@ public class Paypal extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PayPal-simbolo (2).jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
 
-        jToggleButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jToggleButton1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton1.setText("VOLVER");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        volverPaypal.setBackground(new java.awt.Color(0, 0, 0));
+        volverPaypal.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        volverPaypal.setForeground(new java.awt.Color(255, 255, 255));
+        volverPaypal.setText("VOLVER");
+        volverPaypal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                volverPaypalActionPerformed(evt);
             }
         });
 
@@ -64,7 +75,7 @@ public class Paypal extends javax.swing.JFrame {
                 .addGap(57, 57, 57)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jToggleButton1)
+                .addComponent(volverPaypal)
                 .addGap(16, 16, 16))
         );
         jPanel2Layout.setVerticalGroup(
@@ -76,7 +87,7 @@ public class Paypal extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
-                        .addComponent(jToggleButton1)))
+                        .addComponent(volverPaypal)))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
@@ -94,11 +105,11 @@ public class Paypal extends javax.swing.JFrame {
             }
         });
 
-        jToggleButton2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jToggleButton2.setText("SIGUIENTE");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        siguientePaypal.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        siguientePaypal.setText("SIGUIENTE");
+        siguientePaypal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                siguientePaypalActionPerformed(evt);
             }
         });
 
@@ -121,7 +132,7 @@ public class Paypal extends javax.swing.JFrame {
                 .addContainerGap(60, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jToggleButton2)
+                .addComponent(siguientePaypal)
                 .addGap(399, 399, 399))
         );
         jPanel1Layout.setVerticalGroup(
@@ -137,7 +148,7 @@ public class Paypal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(61, 61, 61)
-                .addComponent(jToggleButton2)
+                .addComponent(siguientePaypal)
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
@@ -155,49 +166,54 @@ public class Paypal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    private void volverPaypalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverPaypalActionPerformed
+        
+    }//GEN-LAST:event_volverPaypalActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    private void siguientePaypalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguientePaypalActionPerformed
+        
+    }//GEN-LAST:event_siguientePaypalActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Paypal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Paypal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Paypal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Paypal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+        usuario user = new usuario();
+        Login log = new Login();
+        Registro reg = new Registro();
+        CatalogoNoSesion cns = new CatalogoNoSesion();
+        CatalogoNoSesion2 cns2 = new CatalogoNoSesion2();
+        CatalogoEstilo cata = new CatalogoEstilo();
+        CatalogoEstilo2 cata2 = new CatalogoEstilo2();
+        Perfil Per = new Perfil();
+        Amazon Amazon = new Amazon();
+        Anillo Anillo = new Anillo();
+        Casio Casio = new Casio();
+        Caña Caña = new Caña();
+        Chanel Chanel = new Chanel();
+        Iphone Iphone = new Iphone();
+        Nokia Nokia = new Nokia();
+        PS5 PS5 = new PS5();
+        Pendientes Pendientes = new Pendientes();
+        Rolex Rolex = new Rolex();
+        Volante Volante = new Volante();
+        XBOX XBOX = new XBOX();
+        //OTROS
+        Direccion direc = new Direccion();
+        Paypal paypal = new Paypal();
+        Tarjeta tarjeta = new Tarjeta();
+        Completado completado = new Completado();
 
-        /* Create and display the form */
+        controlador con = new controlador(log, reg, user, cns, cns2, cata, cata2, Per, Amazon, Anillo, Casio, Caña, Chanel, Iphone, Nokia, PS5, Pendientes, Rolex, Volante, XBOX, direc, paypal, tarjeta, completado);
+        paypal.setVisible(true);
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Paypal().setVisible(true);
+                
             }
         });
     }
@@ -210,7 +226,7 @@ public class Paypal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
+    public javax.swing.JToggleButton siguientePaypal;
+    public javax.swing.JToggleButton volverPaypal;
     // End of variables declaration//GEN-END:variables
 }

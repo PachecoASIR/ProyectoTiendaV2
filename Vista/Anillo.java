@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import Controlador.controlador;
+import Modelo.usuario;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
@@ -19,7 +21,7 @@ public class Anillo extends javax.swing.JFrame {
      */
     public Anillo() {
         initComponents();
-        this.setTitle("Locotoo");
+        this.setTitle("Cuerdotoo");
         this.setResizable(false);
         Image img = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Images/Logo2.png"));
         Image resizedImg = img.getScaledInstance(60, 50, Image.SCALE_SMOOTH);
@@ -38,13 +40,12 @@ public class Anillo extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        volverAnillo = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        comprarAnillo = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
@@ -66,11 +67,6 @@ public class Anillo extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(204, 204, 0));
         jLabel1.setText("Anillo Plata con Circonita");
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(204, 204, 0));
-        jButton1.setText("PERFIL");
-
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 204, 0));
         jLabel2.setText("Descripción");
@@ -83,19 +79,24 @@ public class Anillo extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(204, 204, 0));
         jLabel4.setText("Precio:");
 
-        jButton2.setText("Volver");
+        volverAnillo.setText("Volver");
+        volverAnillo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverAnilloActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 204, 0));
         jLabel5.setText("Atributos");
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 0));
-        jButton3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(204, 204, 0));
-        jButton3.setText("COMPRAR");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        comprarAnillo.setBackground(new java.awt.Color(0, 0, 0));
+        comprarAnillo.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        comprarAnillo.setForeground(new java.awt.Color(204, 204, 0));
+        comprarAnillo.setText("COMPRAR");
+        comprarAnillo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                comprarAnilloActionPerformed(evt);
             }
         });
 
@@ -161,8 +162,7 @@ public class Anillo extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -194,21 +194,19 @@ public class Anillo extends javax.swing.JFrame {
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel20))
-                            .addComponent(jButton3)
+                            .addComponent(comprarAnillo)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(36, 36, 36))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(volverAnillo)
                 .addGap(369, 369, 369))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -239,9 +237,9 @@ public class Anillo extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(jLabel20))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3)
+                        .addComponent(comprarAnillo)
                         .addGap(49, 49, 49)))
-                .addComponent(jButton2)
+                .addComponent(volverAnillo)
                 .addGap(29, 29, 29))
         );
 
@@ -259,52 +257,57 @@ public class Anillo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void comprarAnilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comprarAnilloActionPerformed
+        this.setVisible(false);
+        Direccion c = new Direccion();
+        c.setVisible(true);
+    }//GEN-LAST:event_comprarAnilloActionPerformed
 
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void volverAnilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAnilloActionPerformed
+       
+    }//GEN-LAST:event_volverAnilloActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Anillo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Anillo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Anillo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Anillo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+                  usuario user = new usuario();
+        Login log = new Login();
+        Registro reg = new Registro();
+        CatalogoNoSesion cns = new CatalogoNoSesion();
+        CatalogoNoSesion2 cns2 = new CatalogoNoSesion2();
+        CatalogoEstilo cata = new CatalogoEstilo();
+        CatalogoEstilo2 cata2 = new CatalogoEstilo2();
+        Perfil Per = new Perfil();
+        Amazon Amazon = new Amazon();
+        Anillo Anillo = new Anillo();
+        Casio Casio = new Casio();
+        Caña Caña = new Caña();
+        Chanel Chanel = new Chanel();
+        Iphone Iphone = new Iphone();
+        Nokia Nokia = new Nokia();
+        PS5 PS5 = new PS5();
+        Pendientes Pendientes = new Pendientes();
+        Rolex Rolex = new Rolex();
+        Volante Volante = new Volante();
+        XBOX XBOX = new XBOX();
+        //OTROS
+        Direccion direc = new Direccion();
+        Paypal paypal = new Paypal();
+        Tarjeta tarjeta = new Tarjeta();
+        Completado completado = new Completado();
 
-        /* Create and display the form */
+        controlador con = new controlador(log, reg, user, cns, cns2, cata, cata2, Per, Amazon, Anillo, Casio, Caña, Chanel, Iphone, Nokia, PS5, Pendientes, Rolex, Volante, XBOX, direc, paypal, tarjeta,completado);
+        Anillo.setVisible(true);
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Anillo().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    public javax.swing.JButton comprarAnillo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -322,5 +325,6 @@ public class Anillo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    public javax.swing.JButton volverAnillo;
     // End of variables declaration//GEN-END:variables
 }

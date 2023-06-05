@@ -4,9 +4,12 @@
  */
 package Vista;
 
+import Controlador.controlador;
+import Modelo.usuario;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,7 +19,7 @@ public class CatalogoNoSesion extends javax.swing.JFrame {
 
     public CatalogoNoSesion() {
         initComponents();
-        this.setTitle("Logo");
+        this.setTitle("Cuerdotoo");
         Image img = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Images/Logo2.png"));
         Image resizedImg = img.getScaledInstance(60, 50, Image.SCALE_SMOOTH);
         jLabel2.setIcon(new ImageIcon(resizedImg));
@@ -37,10 +40,10 @@ public class CatalogoNoSesion extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        PS1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        Perfil = new javax.swing.JButton();
+        NoSesion1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -103,17 +106,37 @@ public class CatalogoNoSesion extends javax.swing.JFrame {
         });
 
         jButton4.setText("PS5");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("XBox Series X");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Pendientes Oro 24k");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("Caña Pescar");
-
-        jButton2.setText("Página Siguiente");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        PS1.setText("Página Siguiente");
+        PS1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PS1ActionPerformed(evt);
             }
         });
 
@@ -123,12 +146,12 @@ public class CatalogoNoSesion extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Logo2.png"))); // NOI18N
         jLabel2.setText("  CUERDOTOO");
 
-        Perfil.setBackground(new java.awt.Color(204, 204, 0));
-        Perfil.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        Perfil.setText("Iniciar Sesion");
-        Perfil.addActionListener(new java.awt.event.ActionListener() {
+        NoSesion1.setBackground(new java.awt.Color(204, 204, 0));
+        NoSesion1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        NoSesion1.setText("Iniciar Sesion");
+        NoSesion1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PerfilActionPerformed(evt);
+                NoSesion1ActionPerformed(evt);
             }
         });
 
@@ -139,8 +162,8 @@ public class CatalogoNoSesion extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Perfil)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1120, Short.MAX_VALUE)
+                .addComponent(NoSesion1)
                 .addGap(46, 46, 46))
         );
         jPanel2Layout.setVerticalGroup(
@@ -152,7 +175,7 @@ public class CatalogoNoSesion extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(56, 56, 56)
-                        .addComponent(Perfil)))
+                        .addComponent(NoSesion1)))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
 
@@ -341,7 +364,7 @@ public class CatalogoNoSesion extends javax.swing.JFrame {
                                 .addComponent(jLabel23))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGap(491, 491, 491)
-                                .addComponent(jButton2))
+                                .addComponent(PS1))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGap(403, 403, 403)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -387,7 +410,7 @@ public class CatalogoNoSesion extends javax.swing.JFrame {
                         .addComponent(jButton6))
                     .addComponent(jButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(PS1)
                 .addGap(36, 36, 36))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(189, 189, 189)
@@ -423,8 +446,37 @@ public class CatalogoNoSesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
      public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        try {
+         
+                usuario user = new usuario();
+        Login log = new Login();
+        Registro reg = new Registro();
+        CatalogoNoSesion cns = new CatalogoNoSesion();
+        CatalogoNoSesion2 cns2 = new CatalogoNoSesion2();
+        CatalogoEstilo cata = new CatalogoEstilo();
+        CatalogoEstilo2 cata2 = new CatalogoEstilo2();
+        Perfil Per =new Perfil();
+        Amazon Amazon = new Amazon();
+    Anillo Anillo = new Anillo();
+    Casio Casio = new Casio();
+    Caña Caña = new Caña();
+    Chanel Chanel = new Chanel();
+    Iphone Iphone = new Iphone();
+    Nokia Nokia = new Nokia();
+    PS5 PS5  = new PS5 ();
+    Pendientes Pendientes = new Pendientes();
+    Rolex Rolex = new Rolex();
+    Volante Volante = new Volante();
+    XBOX XBOX  = new XBOX ();
+    //OTROS
+    Direccion direc = new Direccion();
+    Paypal paypal = new Paypal();
+    Tarjeta tarjeta = new Tarjeta();
+    Completado completado = new Completado();
+
+        controlador con = new controlador(log, reg, user,cns,cns2,cata,cata2,Per,Amazon,Anillo,Casio,Caña,Chanel,Iphone,Nokia,PS5,Pendientes,Rolex,Volante,XBOX,direc,paypal,tarjeta,completado);
+        cns.setVisible(true);
+         
+         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -436,30 +488,46 @@ public class CatalogoNoSesion extends javax.swing.JFrame {
         }
 
         java.awt.EventQueue.invokeLater(() -> {
-            new CatalogoNoSesion().setVisible(true);
+            
         });
     }
      
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Primero debes loguearte");
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void PS1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PS1ActionPerformed
+        
+    }//GEN-LAST:event_PS1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Primero debes loguearte");
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void PerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PerfilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PerfilActionPerformed
+    private void NoSesion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoSesion1ActionPerformed
+       
+    }//GEN-LAST:event_NoSesion1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        JOptionPane.showMessageDialog(null, "Primero debes loguearte");
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        JOptionPane.showMessageDialog(null, "Primero debes loguearte");
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        JOptionPane.showMessageDialog(null, "Primero debes loguearte");
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        JOptionPane.showMessageDialog(null, "Primero debes loguearte");
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Perfil;
+    public javax.swing.JButton NoSesion1;
+    public javax.swing.JButton PS1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
