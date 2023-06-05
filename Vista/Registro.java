@@ -7,6 +7,9 @@ package Vista;
 import Controlador.controlador;
 import Modelo.metodos;
 import Modelo.usuario;
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -18,7 +21,26 @@ public class Registro extends javax.swing.JFrame {
      * Creates new form Registro
      */
     public Registro() {
+        // Inicializar los componentes de la interfaz gráfica
         initComponents();
+
+        // Establecer el título de la ventana
+        this.setTitle("Cuerdotoo");
+
+        // Desactivar la capacidad de cambiar el tamaño de la ventana
+        this.setResizable(false);
+
+        // Cargar y establecer el icono de la ventana
+        Image img = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Images/Logo2.png"));
+
+        // Redimensionar la imagen del icono
+        Image resizedImg = img.getScaledInstance(60, 50, Image.SCALE_SMOOTH);
+
+        // Crear un ImageIcon a partir de la imagen redimensionada
+        ImageIcon icono = new ImageIcon(resizedImg);
+
+        // Establecer el icono de la ventana
+        this.setIconImage(icono.getImage());
     }
 
     /**
@@ -36,11 +58,11 @@ public class Registro extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtApellidos = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txtPass = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtCorreo = new javax.swing.JTextField();
         btnRegistrarse = new javax.swing.JButton();
         IrLogin = new javax.swing.JButton();
+        txtPass = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,12 +76,6 @@ public class Registro extends javax.swing.JFrame {
 
         jLabel3.setForeground(new java.awt.Color(204, 204, 0));
         jLabel3.setText("Contraseña");
-
-        txtPass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPassActionPerformed(evt);
-            }
-        });
 
         jLabel4.setForeground(new java.awt.Color(204, 204, 0));
         jLabel4.setText("Correo");
@@ -89,7 +105,7 @@ public class Registro extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 153, Short.MAX_VALUE)
+                .addGap(0, 167, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -105,14 +121,14 @@ public class Registro extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(IrLogin)
                                 .addGap(14, 14, 14)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnRegistrarse, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                                    .addComponent(txtApellidos, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                                    .addComponent(txtCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                                    .addComponent(btnRegistrarse, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtPass)))
                             .addComponent(jLabel2))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(229, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,8 +143,8 @@ public class Registro extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                    .addComponent(jLabel3)
+                    .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -137,18 +153,22 @@ public class Registro extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegistrarse)
                     .addComponent(IrLogin))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -158,16 +178,12 @@ public class Registro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCorreoActionPerformed
 
-    private void txtPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPassActionPerformed
-
     private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistrarseActionPerformed
 
     private void irLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_irLoginActionPerformed
-      
+
     }//GEN-LAST:event_irLoginActionPerformed
 
     private void IrLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IrLoginActionPerformed
@@ -178,40 +194,39 @@ public class Registro extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-       
-        
-                usuario user = new usuario();
+
+        usuario user = new usuario();
         Login log = new Login();
         Registro reg = new Registro();
         CatalogoNoSesion cns = new CatalogoNoSesion();
         CatalogoNoSesion2 cns2 = new CatalogoNoSesion2();
         CatalogoEstilo cata = new CatalogoEstilo();
         CatalogoEstilo2 cata2 = new CatalogoEstilo2();
-        Perfil Per =new Perfil();
+        Perfil Per = new Perfil();
         Amazon Amazon = new Amazon();
-    Anillo Anillo = new Anillo();
-    Casio Casio = new Casio();
-    Caña Caña = new Caña();
-    Chanel Chanel = new Chanel();
-    Iphone Iphone = new Iphone();
-    Nokia Nokia = new Nokia();
-    PS5 PS5  = new PS5 ();
-    Pendientes Pendientes = new Pendientes();
-    Rolex Rolex = new Rolex();
-    Volante Volante = new Volante();
-    XBOX XBOX  = new XBOX ();
-    //OTROS
-    Direccion direc = new Direccion();
-    Paypal paypal = new Paypal();
-    Tarjeta tarjeta = new Tarjeta();
-    Completado completado = new Completado();
+        Anillo Anillo = new Anillo();
+        Casio Casio = new Casio();
+        Caña Caña = new Caña();
+        Chanel Chanel = new Chanel();
+        Iphone Iphone = new Iphone();
+        Nokia Nokia = new Nokia();
+        PS5 PS5 = new PS5();
+        Pendientes Pendientes = new Pendientes();
+        Rolex Rolex = new Rolex();
+        Volante Volante = new Volante();
+        XBOX XBOX = new XBOX();
+        //OTROS
+        Direccion direc = new Direccion();
+        Paypal paypal = new Paypal();
+        Tarjeta tarjeta = new Tarjeta();
+        Completado completado = new Completado();
 
-        controlador con = new controlador(log, reg, user,cns,cns2,cata,cata2,Per,Amazon,Anillo,Casio,Caña,Chanel,Iphone,Nokia,PS5,Pendientes,Rolex,Volante,XBOX,direc,paypal,tarjeta,completado);
+        controlador con = new controlador(log, reg, user, cns, cns2, cata, cata2, Per, Amazon, Anillo, Casio, Caña, Chanel, Iphone, Nokia, PS5, Pendientes, Rolex, Volante, XBOX, direc, paypal, tarjeta, completado);
         reg.setVisible(true);
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
+
             }
         });
     }
@@ -227,6 +242,6 @@ public class Registro extends javax.swing.JFrame {
     public javax.swing.JTextField txtApellidos;
     public javax.swing.JTextField txtCorreo;
     public javax.swing.JTextField txtNombre;
-    public javax.swing.JTextField txtPass;
+    public javax.swing.JPasswordField txtPass;
     // End of variables declaration//GEN-END:variables
 }

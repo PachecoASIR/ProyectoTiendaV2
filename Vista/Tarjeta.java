@@ -4,6 +4,10 @@
  */
 package Vista;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Pacheco
@@ -14,8 +18,26 @@ public class Tarjeta extends javax.swing.JFrame {
      * Creates new form Tarjeta
      */
     public Tarjeta() {
+        // Inicializar los componentes de la interfaz gráfica
         initComponents();
+
+        // Establecer el título de la ventana
+        this.setTitle("Cuerdotoo");
+
+        // Desactivar la capacidad de cambiar el tamaño de la ventana
         this.setResizable(false);
+
+        // Cargar y establecer el icono de la ventana
+        Image img = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Images/Logo2.png"));
+
+        // Redimensionar la imagen del icono
+        Image resizedImg = img.getScaledInstance(60, 50, Image.SCALE_SMOOTH);
+
+        // Crear un ImageIcon a partir de la imagen redimensionada
+        ImageIcon icono = new ImageIcon(resizedImg);
+
+        // Establecer el icono de la ventana
+        this.setIconImage(icono.getImage());
     }
 
     /**
@@ -37,17 +59,17 @@ public class Tarjeta extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        tarjNum = new javax.swing.JTextField();
+        tarjFecha = new javax.swing.JTextField();
+        tarjNombre = new javax.swing.JTextField();
+        tarjCorreo = new javax.swing.JTextField();
         siguienteTarjeta = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
-        jTextField6 = new javax.swing.JTextField();
+        tarjCVV = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,27 +128,27 @@ public class Tarjeta extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel7.setText("CORREO ELECTRÓNICO");
 
-        jTextField1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        tarjNum.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tarjNum.setBorder(null);
+        tarjNum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                tarjNumActionPerformed(evt);
             }
         });
 
-        jTextField2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        jTextField2.setBorder(null);
+        tarjFecha.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tarjFecha.setBorder(null);
 
-        jTextField4.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        jTextField4.setBorder(null);
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        tarjNombre.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tarjNombre.setBorder(null);
+        tarjNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                tarjNombreActionPerformed(evt);
             }
         });
 
-        jTextField5.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        jTextField5.setBorder(null);
+        tarjCorreo.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tarjCorreo.setBorder(null);
 
         siguienteTarjeta.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         siguienteTarjeta.setText("SIGUIENTE");
@@ -136,10 +158,10 @@ public class Tarjeta extends javax.swing.JFrame {
             }
         });
 
-        jTextField6.setBorder(null);
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        tarjCVV.setBorder(null);
+        tarjCVV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                tarjCVVActionPerformed(evt);
             }
         });
 
@@ -163,16 +185,16 @@ public class Tarjeta extends javax.swing.JFrame {
                                     .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tarjCorreo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE)
+                                    .addComponent(tarjNombre, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tarjNum, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(tarjFecha, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGap(49, 49, 49)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jSeparator5, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                                     .addComponent(jLabel5)
-                                    .addComponent(jTextField6)))))
+                                    .addComponent(tarjCVV)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(415, 415, 415)
                         .addComponent(siguienteTarjeta)))
@@ -187,7 +209,7 @@ public class Tarjeta extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tarjNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
@@ -196,8 +218,8 @@ public class Tarjeta extends javax.swing.JFrame {
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tarjFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tarjCVV, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(1, 1, 1)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -205,13 +227,13 @@ public class Tarjeta extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tarjNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tarjCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -234,23 +256,23 @@ public class Tarjeta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void volverTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverTarjetaActionPerformed
-       
+
     }//GEN-LAST:event_volverTarjetaActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void tarjNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tarjNumActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_tarjNumActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void tarjNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tarjNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_tarjNombreActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void tarjCVVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tarjCVVActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_tarjCVVActionPerformed
 
     private void siguienteTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguienteTarjetaActionPerformed
-     
+
     }//GEN-LAST:event_siguienteTarjetaActionPerformed
 
     /**
@@ -303,12 +325,12 @@ public class Tarjeta extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     public javax.swing.JButton siguienteTarjeta;
+    public javax.swing.JTextField tarjCVV;
+    public javax.swing.JTextField tarjCorreo;
+    public javax.swing.JTextField tarjFecha;
+    public javax.swing.JTextField tarjNombre;
+    public javax.swing.JTextField tarjNum;
     public javax.swing.JButton volverTarjeta;
     // End of variables declaration//GEN-END:variables
 }

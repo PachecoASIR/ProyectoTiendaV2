@@ -19,7 +19,7 @@ public class CatalogoNoSesion extends javax.swing.JFrame {
 
     public CatalogoNoSesion() {
         initComponents();
-        this.setTitle("Logo");
+        this.setTitle("Cuerdotoo");
         Image img = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Images/Logo2.png"));
         Image resizedImg = img.getScaledInstance(60, 50, Image.SCALE_SMOOTH);
         jLabel2.setIcon(new ImageIcon(resizedImg));
@@ -445,38 +445,38 @@ public class CatalogoNoSesion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-     public static void main(String args[]) {
-         
-                usuario user = new usuario();
+    public static void main(String args[]) {
+
+        usuario user = new usuario();
         Login log = new Login();
         Registro reg = new Registro();
         CatalogoNoSesion cns = new CatalogoNoSesion();
         CatalogoNoSesion2 cns2 = new CatalogoNoSesion2();
         CatalogoEstilo cata = new CatalogoEstilo();
         CatalogoEstilo2 cata2 = new CatalogoEstilo2();
-        Perfil Per =new Perfil();
+        Perfil Per = new Perfil();
         Amazon Amazon = new Amazon();
-    Anillo Anillo = new Anillo();
-    Casio Casio = new Casio();
-    Caña Caña = new Caña();
-    Chanel Chanel = new Chanel();
-    Iphone Iphone = new Iphone();
-    Nokia Nokia = new Nokia();
-    PS5 PS5  = new PS5 ();
-    Pendientes Pendientes = new Pendientes();
-    Rolex Rolex = new Rolex();
-    Volante Volante = new Volante();
-    XBOX XBOX  = new XBOX ();
-    //OTROS
-    Direccion direc = new Direccion();
-    Paypal paypal = new Paypal();
-    Tarjeta tarjeta = new Tarjeta();
-    Completado completado = new Completado();
+        Anillo Anillo = new Anillo();
+        Casio Casio = new Casio();
+        Caña Caña = new Caña();
+        Chanel Chanel = new Chanel();
+        Iphone Iphone = new Iphone();
+        Nokia Nokia = new Nokia();
+        PS5 PS5 = new PS5();
+        Pendientes Pendientes = new Pendientes();
+        Rolex Rolex = new Rolex();
+        Volante Volante = new Volante();
+        XBOX XBOX = new XBOX();
+        //OTROS
+        Direccion direc = new Direccion();
+        Paypal paypal = new Paypal();
+        Tarjeta tarjeta = new Tarjeta();
+        Completado completado = new Completado();
 
-        controlador con = new controlador(log, reg, user,cns,cns2,cata,cata2,Per,Amazon,Anillo,Casio,Caña,Chanel,Iphone,Nokia,PS5,Pendientes,Rolex,Volante,XBOX,direc,paypal,tarjeta,completado);
+        controlador con = new controlador(log, reg, user, cns, cns2, cata, cata2, Per, Amazon, Anillo, Casio, Caña, Chanel, Iphone, Nokia, PS5, Pendientes, Rolex, Volante, XBOX, direc, paypal, tarjeta, completado);
         cns.setVisible(true);
-         
-         try {
+
+        try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -488,16 +488,16 @@ public class CatalogoNoSesion extends javax.swing.JFrame {
         }
 
         java.awt.EventQueue.invokeLater(() -> {
-            
+
         });
     }
-     
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JOptionPane.showMessageDialog(null, "Primero debes loguearte");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void PS1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PS1ActionPerformed
-        
+
     }//GEN-LAST:event_PS1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -505,7 +505,7 @@ public class CatalogoNoSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void NoSesion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoSesion1ActionPerformed
-       
+
     }//GEN-LAST:event_NoSesion1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed

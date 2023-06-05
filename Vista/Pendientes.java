@@ -18,12 +18,25 @@ public class Pendientes extends javax.swing.JFrame {
      * Creates new form FichaBase
      */
     public Pendientes() {
+        // Inicializar los componentes de la interfaz gráfica
         initComponents();
-        this.setTitle("Locotoo");
+
+        // Establecer el título de la ventana
+        this.setTitle("Cuerdotoo");
+
+        // Desactivar la capacidad de cambiar el tamaño de la ventana
         this.setResizable(false);
+
+        // Cargar y establecer el icono de la ventana
         Image img = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Images/Logo2.png"));
+
+        // Redimensionar la imagen del icono
         Image resizedImg = img.getScaledInstance(60, 50, Image.SCALE_SMOOTH);
+
+        // Crear un ImageIcon a partir de la imagen redimensionada
         ImageIcon icono = new ImageIcon(resizedImg);
+
+        // Establecer el icono de la ventana
         this.setIconImage(icono.getImage());
     }
 
@@ -98,6 +111,7 @@ public class Pendientes extends javax.swing.JFrame {
             }
         });
 
+        jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(0, 0, 0));
         jTextArea1.setColumns(20);
         jTextArea1.setForeground(new java.awt.Color(204, 204, 0));
@@ -257,11 +271,11 @@ public class Pendientes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void comprarPendientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comprarPendientesActionPerformed
-      
+
     }//GEN-LAST:event_comprarPendientesActionPerformed
 
     private void volverPendientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverPendientesActionPerformed
-       
+
     }//GEN-LAST:event_volverPendientesActionPerformed
 
     /**

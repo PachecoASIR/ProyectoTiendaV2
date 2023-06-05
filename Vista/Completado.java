@@ -20,12 +20,25 @@ public class Completado extends javax.swing.JFrame {
      * Creates new form Completado
      */
     public Completado() {
+        // Inicializar los componentes de la interfaz gráfica
         initComponents();
-        this.setTitle("Locotoo");
+
+        // Establecer el título de la ventana
+        this.setTitle("Cuerdotoo");
+
+        // Desactivar la capacidad de cambiar el tamaño de la ventana
         this.setResizable(false);
+
+        // Cargar y establecer el icono de la ventana
         Image img = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Images/Logo2.png"));
+
+        // Redimensionar la imagen del icono
         Image resizedImg = img.getScaledInstance(60, 50, Image.SCALE_SMOOTH);
+
+        // Crear un ImageIcon a partir de la imagen redimensionada
         ImageIcon icono = new ImageIcon(resizedImg);
+
+        // Establecer el icono de la ventana
         this.setIconImage(icono.getImage());
     }
 
@@ -123,7 +136,7 @@ public class Completado extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void volverCompletadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverCompletadoActionPerformed
-        
+
     }//GEN-LAST:event_volverCompletadoActionPerformed
 
     private void imprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imprimirActionPerformed
@@ -134,7 +147,7 @@ public class Completado extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-                     usuario user = new usuario();
+        usuario user = new usuario();
         Login log = new Login();
         Registro reg = new Registro();
         CatalogoNoSesion cns = new CatalogoNoSesion();
@@ -160,12 +173,12 @@ public class Completado extends javax.swing.JFrame {
         Tarjeta tarjeta = new Tarjeta();
         Completado completado = new Completado();
 
-        controlador con = new controlador(log, reg, user, cns, cns2, cata, cata2, Per, Amazon, Anillo, Casio, Caña, Chanel, Iphone, Nokia, PS5, Pendientes, Rolex, Volante, XBOX, direc, paypal, tarjeta,completado);
-         completado.setVisible(true);
-        
+        controlador con = new controlador(log, reg, user, cns, cns2, cata, cata2, Per, Amazon, Anillo, Casio, Caña, Chanel, Iphone, Nokia, PS5, Pendientes, Rolex, Volante, XBOX, direc, paypal, tarjeta, completado);
+        completado.setVisible(true);
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               
+
             }
         });
     }

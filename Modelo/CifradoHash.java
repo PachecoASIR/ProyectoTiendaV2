@@ -1,9 +1,7 @@
 package Modelo;
 
-
-
-
 public class CifradoHash {
+
     /* Retorna un hash a partir de un tipo y un texto */
     public static String getHash(String txt, String hashType) {
         try {
@@ -19,12 +17,12 @@ public class CifradoHash {
         }
         return null;
     }
- 
+
     /* Retorna un hash MD5 */
     public static String md5(String txt) {
         return CifradoHash.getHash(txt, "MD5");
     }
- 
+
     /* Retorna un hash SHA1*/
     public static String sha1(String txt) {
         return CifradoHash.getHash(txt, "SHA1");

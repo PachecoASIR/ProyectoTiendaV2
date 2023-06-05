@@ -1,8 +1,8 @@
 package Modelo;
 
-
 public class usuario {
-    
+
+    //Creamos los SETTER Y GETTER para los metodos
     private String nombre;
     private String apellidos;
     private String contraseña;
@@ -39,7 +39,5 @@ public class usuario {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-    
-    
-    
+
 }
