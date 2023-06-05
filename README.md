@@ -29,8 +29,98 @@ La idea del proyecto es crear una aplicación de una tienda en la cual los usuar
 ```mermaid
 classDiagram
   direction RL
-  class Main {
+
+  class Controlador {
+    + irRegistro()
+    + irPerfil()
+    + irLogin()
+    + LoginCns()
+    + volverCa()
   }
+
+  class CifradoHash {
+    + getHash(txt, hashType)
+    + md5(txt)
+    + sha1(txt)
+  }
+
+  class Conexion {
+    // atributos y métodos de la clase Conexion
+  }
+
+  class Metodos {
+    // atributos y métodos de la clase Metodos
+  }
+
+  class Usuario {
+    - Nombre
+    - Apellidos
+    - Contraseña
+    - Correo
+  }
+
+  class Productos {
+    // atributos y métodos de la clase Productos
+  }
+
+  class CatalogoEstilo {
+    // atributos y métodos de la clase CatalogoEstilo
+  }
+
+  class CatalogoEstilo2 {
+    // atributos y métodos de la clase CatalogoEstilo2
+  }
+
+  class CatalogoNoSesion {
+    // atributos y métodos de la clase CatalogoNoSesion
+  }
+
+  class CatalogoNoSesion2 {
+    // atributos y métodos de la clase CatalogoNoSesion2
+  }
+
+  class Direccion {
+    // atributos y métodos de la clase Direccion
+  }
+
+  class Completado {
+    // atributos y métodos de la clase Completado
+  }
+
+  class Paypal {
+    // atributos y métodos de la clase Paypal
+  }
+
+  class Tarjeta {
+    // atributos y métodos de la clase Tarjeta
+  }
+
+  class Login {
+    + btnLogin
+    + IrRegistrarse
+    + logNombre
+    + logContraseña
+  }
+
+  class Perfil {
+    + volverCatalogo()
+  }
+
+  Controlador --|> CatalogoEstilo
+  Controlador --|> Login
+  Controlador --|> Perfil
+  Conexion --|> Controlador
+  CifradoHash --|> Controlador
+  Metodos --|> Controlador
+  Usuario --|> Controlador
+  Productos --|> Controlador
+  CatalogoEstilo2 --|> Controlador
+  CatalogoNoSesion --|> Controlador
+  CatalogoNoSesion2 --|> Controlador
+  Direccion --|> Controlador
+  Completado --|> Controlador
+  Paypal --|> Controlador
+  Tarjeta --|> Controlador
 ```
 
 ### Diagrama de secuencia:
