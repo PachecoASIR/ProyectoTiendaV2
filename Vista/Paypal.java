@@ -20,12 +20,25 @@ public class Paypal extends javax.swing.JFrame {
      * Creates new form Paypal
      */
     public Paypal() {
+        // Inicializar los componentes de la interfaz gráfica
         initComponents();
+
+        // Establecer el título de la ventana
         this.setTitle("Cuerdotoo");
+
+        // Desactivar la capacidad de cambiar el tamaño de la ventana
         this.setResizable(false);
+
+        // Cargar y establecer el icono de la ventana
         Image img = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Images/Logo2.png"));
+
+        // Redimensionar la imagen del icono
         Image resizedImg = img.getScaledInstance(60, 50, Image.SCALE_SMOOTH);
+
+        // Crear un ImageIcon a partir de la imagen redimensionada
         ImageIcon icono = new ImageIcon(resizedImg);
+
+        // Establecer el icono de la ventana
         this.setIconImage(icono.getImage());
     }
 
@@ -44,7 +57,7 @@ public class Paypal extends javax.swing.JFrame {
         volverPaypal = new javax.swing.JToggleButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        PaypalCorreo = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         siguientePaypal = new javax.swing.JToggleButton();
 
@@ -55,7 +68,6 @@ public class Paypal extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PayPal-simbolo (2).jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
 
         volverPaypal.setBackground(new java.awt.Color(0, 0, 0));
         volverPaypal.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
@@ -97,11 +109,11 @@ public class Paypal extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel4.setText("CORREO ELECTRÓNICO");
 
-        jTextField2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        jTextField2.setBorder(null);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        PaypalCorreo.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        PaypalCorreo.setBorder(null);
+        PaypalCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                PaypalCorreoActionPerformed(evt);
             }
         });
 
@@ -127,7 +139,7 @@ public class Paypal extends javax.swing.JFrame {
                         .addGap(110, 110, 110)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel4)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE)
+                            .addComponent(PaypalCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE)
                             .addComponent(jSeparator1))))
                 .addContainerGap(60, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -144,7 +156,7 @@ public class Paypal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PaypalCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(61, 61, 61)
@@ -167,15 +179,15 @@ public class Paypal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void volverPaypalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverPaypalActionPerformed
-        
+
     }//GEN-LAST:event_volverPaypalActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void PaypalCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PaypalCorreoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_PaypalCorreoActionPerformed
 
     private void siguientePaypalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguientePaypalActionPerformed
-        
+
     }//GEN-LAST:event_siguientePaypalActionPerformed
 
     /**
@@ -213,19 +225,19 @@ public class Paypal extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
+
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JTextField PaypalCorreo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField2;
     public javax.swing.JToggleButton siguientePaypal;
     public javax.swing.JToggleButton volverPaypal;
     // End of variables declaration//GEN-END:variables

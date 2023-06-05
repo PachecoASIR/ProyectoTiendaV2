@@ -54,7 +54,7 @@
                           <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField2" pref="672" max="32767" attributes="0"/>
+                              <Component id="PaypalCorreo" pref="672" max="32767" attributes="0"/>
                               <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -77,7 +77,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" pref="24" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jTextField2" min="-2" max="-2" attributes="0"/>
+                  <Component id="PaypalCorreo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
@@ -131,7 +131,6 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Images/PayPal-simbolo (2).jpg"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="jLabel1"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JToggleButton" name="volverPaypal">
@@ -172,7 +171,7 @@
             <Property name="text" type="java.lang.String" value="CORREO ELECTR&#xd3;NICO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
+        <Component class="javax.swing.JTextField" name="PaypalCorreo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="SansSerif" size="12" style="0"/>
@@ -182,8 +181,11 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PaypalCorreoActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator1">
         </Component>
