@@ -28,99 +28,65 @@ La idea del proyecto es crear una aplicación de una tienda en la cual los usuar
 
 ```mermaid
 classDiagram
-  direction RL
-
   class Controlador {
-    + irRegistro()
-    + irPerfil()
-    + irLogin()
-    + LoginCns()
-    + volverCa()
+    - met: Metodos
+    - x: Usuario
+    - log: Login
+    - reg: Registro
+    - cata: CatalogoEstilo
+    --
+    + Controlador(log: Login, reg: Registro, user: Usuario)
+    + Registrar()
+    + Ingreso()
+    + actionPerformed(e: ActionEvent)
   }
-
-  class CifradoHash {
-    + getHash(txt, hashType)
-    + md5(txt)
-    + sha1(txt)
-  }
-
-  class Conexion {
-    // atributos y métodos de la clase Conexion
-  }
-
+  
   class Metodos {
-    // atributos y métodos de la clase Metodos
+    + InsertarUsuario(x: Usuario): boolean
+    + Autentificacion(Puser: String, Ppsw: String): boolean
   }
-
+  
   class Usuario {
-    - Nombre
-    - Apellidos
-    - Contraseña
-    - Correo
+    - Nombre: String
+    - Apellidos: String
+    - Contraseña: String
+    - Correo: String
+    + getNombre(): String
+    + getApellidos(): String
+    + getContraseña(): String
+    + getCorreo(): String
   }
-
-  class Productos {
-    // atributos y métodos de la clase Productos
+  
+  class Conexion {
+    + Conectar(): Connection
   }
-
+  
+  class Login {
+    + logNombre
+    + logContraseña
+    + btnLogin
+    + IrRegistrarse
+  }
+  
+  class Registro {
+    + txtNombre
+    + txtApellidos
+    + txtPass
+    + txtCorreo
+    + btnRegistrarse
+  }
+  
   class CatalogoEstilo {
     // atributos y métodos de la clase CatalogoEstilo
   }
-
-  class CatalogoEstilo2 {
-    // atributos y métodos de la clase CatalogoEstilo2
-  }
-
-  class CatalogoNoSesion {
-    // atributos y métodos de la clase CatalogoNoSesion
-  }
-
-  class CatalogoNoSesion2 {
-    // atributos y métodos de la clase CatalogoNoSesion2
-  }
-
-  class Direccion {
-    // atributos y métodos de la clase Direccion
-  }
-
-  class Completado {
-    // atributos y métodos de la clase Completado
-  }
-
-  class Paypal {
-    // atributos y métodos de la clase Paypal
-  }
-
-  class Tarjeta {
-    // atributos y métodos de la clase Tarjeta
-  }
-
-  class Login {
-    + btnLogin
-    + IrRegistrarse
-    + logNombre
-    + logContraseña
-  }
-
-  class Perfil {
-    + volverCatalogo()
-  }
-
-  Controlador --|> CatalogoEstilo
-  Controlador --|> Login
-  Controlador --|> Perfil
-  Conexion --|> Controlador
-  CifradoHash --|> Controlador
-  Metodos --|> Controlador
-  Usuario --|> Controlador
-  Productos --|> Controlador
-  CatalogoEstilo2 --|> Controlador
-  CatalogoNoSesion --|> Controlador
-  CatalogoNoSesion2 --|> Controlador
-  Direccion --|> Controlador
-  Completado --|> Controlador
-  Paypal --|> Controlador
-  Tarjeta --|> Controlador
+  
+  Controlador --> ActionListener
+  Controlador --> Metodos
+  Controlador --> Usuario
+  Controlador --> Login
+  Controlador --> Registro
+  Controlador --> CatalogoEstilo
+  Metodos --> Conexion
 ```
 
 ### Diagrama de secuencia:
