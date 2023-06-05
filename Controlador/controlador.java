@@ -35,13 +35,12 @@ import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 
-
 public class controlador implements ActionListener {
-    
+
     static String sel;// Variable estática para almacenar la compra que selecciona el usuario
     static String precioTicket;// Variable estática para almacenar el precio del ticket
-    
-     // Instancias de diferentes clases
+
+    // Instancias de diferentes clases
     metodos met = new metodos(); // Instancia de la clase "metodos"
     usuario x = new usuario(); // Instancia de la clase "usuario"
     Login log = new Login(); // Instancia de la clase "Login"
@@ -51,7 +50,7 @@ public class controlador implements ActionListener {
     CatalogoNoSesion cns = new CatalogoNoSesion(); // Instancia de la clase "CatalogoNoSesion"
     CatalogoNoSesion2 cns2 = new CatalogoNoSesion2(); // Instancia de la clase "CatalogoNoSesion2"
     Perfil Per = new Perfil(); // Instancia de la clase "Perfil"
-    
+
     // Instancias de diferentes fichas/productos
     Amazon Amazon = new Amazon(); // Instancia de la clase "Amazon"
     Anillo Anillo = new Anillo(); // Instancia de la clase "Anillo"
@@ -65,13 +64,13 @@ public class controlador implements ActionListener {
     Rolex Rolex = new Rolex(); // Instancia de la clase "Rolex"
     Volante Volante = new Volante(); // Instancia de la clase "Volante"
     XBOX XBOX = new XBOX(); // Instancia de la clase "XBOX"
-   // Otras instancias
+    // Otras instancias
     Direccion direc = new Direccion(); // Instancia de la clase "Direccion"
     Paypal paypal = new Paypal(); // Instancia de la clase "Paypal"
     Tarjeta tarjeta = new Tarjeta(); // Instancia de la clase "Tarjeta"
     Completado completado = new Completado(); // Instancia de la clase "Completado"
-            
-     public controlador(Login log, Registro reg, usuario user, CatalogoNoSesion cns, CatalogoNoSesion2 cns2, CatalogoEstilo cata, CatalogoEstilo2 cata2, Perfil Per, Amazon Amazon, Anillo Anillo, Casio Casio, Caña Caña, Chanel Chanel, Iphone Iphone, Nokia Nokia, PS5 PS5, Pendientes Pendientes, Rolex Rolex, Volante Volante, XBOX XBOX, Direccion direc, Paypal paypal, Tarjeta tarjeta, Completado completado) {
+
+    public controlador(Login log, Registro reg, usuario user, CatalogoNoSesion cns, CatalogoNoSesion2 cns2, CatalogoEstilo cata, CatalogoEstilo2 cata2, Perfil Per, Amazon Amazon, Anillo Anillo, Casio Casio, Caña Caña, Chanel Chanel, Iphone Iphone, Nokia Nokia, PS5 PS5, Pendientes Pendientes, Rolex Rolex, Volante Volante, XBOX XBOX, Direccion direc, Paypal paypal, Tarjeta tarjeta, Completado completado) {
         // Asignación de parámetros a las variables de la clase
         this.log = log;// Objeto Login
         this.reg = reg;// Objeto Registro
@@ -98,7 +97,6 @@ public class controlador implements ActionListener {
         this.direc = direc;// Objeto Direccion
         this.completado = completado;// Objeto Completado
 
-        
         //Aqui se hace una escucha de los botones de todas las clases de vista
         ///registro de usuarios
         this.reg.btnRegistrarse.addActionListener(this);
@@ -168,139 +166,166 @@ public class controlador implements ActionListener {
         this.completado.imprimir.addActionListener(this);
         this.completado.volverCompletado.addActionListener(this);
     }
-    
 
     public void Registrar() {
-        
+
         //Aqui se recoje lo que el usuario escribe en las textbox del registro
         x.setNombre(reg.txtNombre.getText());
         x.setApellidos(reg.txtApellidos.getText());
         x.setContraseña(reg.txtPass.getText());
         x.setCorreo(reg.txtCorreo.getText());
-        if(reg.txtNombre.getText().equals("")||reg.txtApellidos.getText().equals("")||reg.txtPass.getText().equals("")||reg.txtCorreo.getText().equals("")){
-        JOptionPane.showMessageDialog(null, "Rellena todos los datos");
-        }else{
-        if (met.InsertarUsuario(x)) {
-            reg.setVisible(false);
-            log.setVisible(true);
-            JOptionPane.showMessageDialog(null, "Usuario registrado correctamente");
-
+        //Deteccion de si las cajas de texto estan vacias
+        if (reg.txtNombre.getText().equals("") || reg.txtApellidos.getText().equals("") || reg.txtPass.getText().equals("") || reg.txtCorreo.getText().equals("")) {
+            //Si algun campo esta vacio que salte mensaje de error
+            JOptionPane.showMessageDialog(null, "Rellena todos los datos");
         } else {
-            JOptionPane.showMessageDialog(null, "Error al regisitrarse");
+            //Si no que ejecute el metodo InsertarUsuario
+            if (met.InsertarUsuario(x)) {
+                reg.setVisible(false);
+                log.setVisible(true);
+                JOptionPane.showMessageDialog(null, "Usuario registrado correctamente");
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al regisitrarse");
+            }
         }
-        }
     }
-    
-    public void irRegistro(){
-       reg.setVisible(true);
-       log.setVisible(false);
-    
+    //Aqui programamos la funcionalidad de los botones
+
+    public void irRegistro() {
+        reg.setVisible(true);
+        log.setVisible(false);
+
     }
-     public void irPerfil(){
-       cata.setVisible(false);
-       Per.setVisible(true);
-    
+
+    public void irPerfil() {
+        cata.setVisible(false);
+        Per.setVisible(true);
+
     }
-     public void irLogin(){
-       reg.setVisible(false);
-       log.setVisible(true);
-    
+
+    public void irLogin() {
+        reg.setVisible(false);
+        log.setVisible(true);
+
     }
-     public void LoginCns(){
-       cns.setVisible(false);
-       log.setVisible(true);
-     }
-     public void LoginCns2(){
-       cns2.setVisible(false);
-       log.setVisible(true);
-     }
-     public void PS1(){
-       cns.setVisible(false);
-       cns2.setVisible(true);
-     }
-     public void PS2(){
-       cns2.setVisible(false);
-       cns.setVisible(true);
-     }
-     public void volverCa(){
-       Per.setVisible(false);
-       cata.setVisible(true);
-         
-     }
-     public void ircata2(){
-       cata.setVisible(false);
-       cata2.setVisible(true);
-     }
-     public void irperfil2(){
-       cata2.setVisible(false);
-       Per.setVisible(true);
-     }
-     public void volverCata1(){
-       cata2.setVisible(false);
-       cata.setVisible(true);
+
+    public void LoginCns() {
+        cns.setVisible(false);
+        log.setVisible(true);
     }
-       public void irIphone(){
-       cata.setVisible(false);
-       Iphone.setVisible(true);
+
+    public void LoginCns2() {
+        cns2.setVisible(false);
+        log.setVisible(true);
     }
-       public void irCaña(){
-       cata.setVisible(false);
-       Caña.setVisible(true);
+
+    public void PS1() {
+        cns.setVisible(false);
+        cns2.setVisible(true);
     }
-       public void irXBOX(){
-       cata.setVisible(false);
-       XBOX.setVisible(true);
+
+    public void PS2() {
+        cns2.setVisible(false);
+        cns.setVisible(true);
     }
-       public void irPS5(){
-       cata.setVisible(false);
-       PS5.setVisible(true);
+
+    public void volverCa() {
+        Per.setVisible(false);
+        cata.setVisible(true);
+
     }
-       public void irPendientes(){
-       cata.setVisible(false);
-       Pendientes.setVisible(true);
+
+    public void ircata2() {
+        cata.setVisible(false);
+        cata2.setVisible(true);
     }
-       public void irRolex(){
-       cata.setVisible(false);
-       Rolex.setVisible(true);
+
+    public void irperfil2() {
+        cata2.setVisible(false);
+        Per.setVisible(true);
     }
-       public void irNokia(){
-       cata2.setVisible(false);
-       Nokia.setVisible(true);
-       
-       }
-       public void irChanel(){
-       cata2.setVisible(false);
-       Chanel.setVisible(true);
-       
-       }
-       public void irAnillo(){
-       cata2.setVisible(false);
-       Anillo.setVisible(true);
-       
-       }
-       public void irCasio(){
-       cata2.setVisible(false);
-       Casio.setVisible(true);
-       
-       }
-       public void irVolante(){
-       cata2.setVisible(false);
-       Volante.setVisible(true);
-       
-       }
-       public void irAmazon(){
-       cata2.setVisible(false);
-       Amazon.setVisible(true);     
-       }
-       public void volverAmazon(){
-       Amazon.setVisible(false);
-       cata2.setVisible(true);     
-       }
-       public void volverAnillo(){
-       Anillo.setVisible(false);
-       cata2.setVisible(true); 
-       }
-       
+
+    public void volverCata1() {
+        cata2.setVisible(false);
+        cata.setVisible(true);
+    }
+
+    public void irIphone() {
+        cata.setVisible(false);
+        Iphone.setVisible(true);
+    }
+
+    public void irCaña() {
+        cata.setVisible(false);
+        Caña.setVisible(true);
+    }
+
+    public void irXBOX() {
+        cata.setVisible(false);
+        XBOX.setVisible(true);
+    }
+
+    public void irPS5() {
+        cata.setVisible(false);
+        PS5.setVisible(true);
+    }
+
+    public void irPendientes() {
+        cata.setVisible(false);
+        Pendientes.setVisible(true);
+    }
+
+    public void irRolex() {
+        cata.setVisible(false);
+        Rolex.setVisible(true);
+    }
+
+    public void irNokia() {
+        cata2.setVisible(false);
+        Nokia.setVisible(true);
+
+    }
+
+    public void irChanel() {
+        cata2.setVisible(false);
+        Chanel.setVisible(true);
+
+    }
+
+    public void irAnillo() {
+        cata2.setVisible(false);
+        Anillo.setVisible(true);
+
+    }
+
+    public void irCasio() {
+        cata2.setVisible(false);
+        Casio.setVisible(true);
+
+    }
+
+    public void irVolante() {
+        cata2.setVisible(false);
+        Volante.setVisible(true);
+
+    }
+
+    public void irAmazon() {
+        cata2.setVisible(false);
+        Amazon.setVisible(true);
+    }
+
+    public void volverAmazon() {
+        Amazon.setVisible(false);
+        cata2.setVisible(true);
+    }
+
+    public void volverAnillo() {
+        Anillo.setVisible(false);
+        cata2.setVisible(true);
+    }
+
     public void volverCasio() {
         Casio.setVisible(false);
         cata2.setVisible(true);
@@ -350,198 +375,226 @@ public class controlador implements ActionListener {
         XBOX.setVisible(false);
         cata.setVisible(true);
     }
-    public void comprarAmazon(){
-       Amazon.setVisible(false);
-       direc.setVisible(true); 
-       sel="Amazit";
-       precioTicket="124.95€";
-       }
-       public void comprarAnillo(){
-       Anillo.setVisible(false);
-       direc.setVisible(true); 
-       sel="Anillo";
-       precioTicket="19.95€";
-       }
-       
+
+    public void comprarAmazon() {
+        Amazon.setVisible(false);
+        direc.setVisible(true);
+        sel = "Amazfit";
+        precioTicket = "124.95€";
+    }
+
+    public void comprarAnillo() {
+        Anillo.setVisible(false);
+        direc.setVisible(true);
+        sel = "Anillo";
+        precioTicket = "19.95€";
+    }
+
     public void comprarCasio() {
         Casio.setVisible(false);
         direc.setVisible(true);
-        sel="Casio";
-        precioTicket="29.99€";
+        sel = "Casio";
+        precioTicket = "29.99€";
     }
 
     public void comprarCaña() {
         Caña.setVisible(false);
         direc.setVisible(true);
-        sel="Caña";
-        precioTicket="20€";
+        sel = "Caña";
+        precioTicket = "20€";
     }
 
     public void comprarChanel() {
         Chanel.setVisible(false);
         direc.setVisible(true);
-        sel="Chanel";
-        precioTicket="79.45€";
+        sel = "Chanel";
+        precioTicket = "79.45€";
     }
 
     public void comprarIphone() {
         Iphone.setVisible(false);
         direc.setVisible(true);
-        sel="Iphone";
-        precioTicket="749€";
+        sel = "Iphone";
+        precioTicket = "749€";
     }
 
     public void comprarNokia() {
         Nokia.setVisible(false);
         direc.setVisible(true);
-        sel="Nokia";
-        precioTicket="39.45€";
+        sel = "Nokia";
+        precioTicket = "39.45€";
     }
 
     public void comprarPS5() {
         PS5.setVisible(false);
         direc.setVisible(true);
-        sel="PS5";
-        precioTicket="449.75€";
+        sel = "PS5";
+        precioTicket = "449.75€";
     }
 
     public void comprarPendientes() {
         Pendientes.setVisible(false);
         direc.setVisible(true);
-        sel="Pendientes";
-        precioTicket="599€";
+        sel = "Pendientes";
+        precioTicket = "599€";
     }
 
     public void comprarRolex() {
         Rolex.setVisible(false);
         direc.setVisible(true);
-        sel="Rolex";
-        precioTicket="2499.95€";
+        sel = "Rolex";
+        precioTicket = "2499.95€";
     }
 
     public void comprarVolante() {
         Volante.setVisible(false);
         direc.setVisible(true);
-        sel="Volante";
-        precioTicket="189.95€";
+        sel = "Volante";
+        precioTicket = "189.95€";
     }
 
     public void comprarXBOX() {
         XBOX.setVisible(false);
         direc.setVisible(true);
-        sel="XBOX one";
-        precioTicket="199.99€";
+        sel = "XBOX one";
+        precioTicket = "199.99€";
     }
+
     public void volverDireccion() {
         direc.setVisible(false);
         cata.setVisible(true);
     }
-    public void siguienteDireccion(){
-        JButton boton1 = new JButton("Tarjeta");
-    boton1.addActionListener(e -> {
-        // Acción al pulsar el botón 1 (abrir archivo 1)
-        direc.setVisible(false);
-        
-        tarjeta.setVisible(true);
-    });
 
-    JButton boton2 = new JButton("Paypal");
-    boton2.addActionListener(e -> {
-        // Acción al pulsar el botón 2 (abrir archivo 2)
-        direc.setVisible(false);
-        
-        paypal.setVisible(true);
-    });
+    //Una vez presionas el boton de "Siguiente" en direccion te salta una ventana emergente en l acual tendras que elegir el metodo de pago
+    public void siguienteDireccion() {
+        //Aqui compruebo si hay algun campo sin rellenar y si lo hay que salte un mensaje de error
+        if (direc.dirNombre.getText().equals("") || direc.dirCode.getText().equals("") || direc.dirDir.getText().equals("") || direc.dirPais.getText().equals("") || direc.dirProvincia.getText().equals("") || direc.dirTel.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Rellena todos los campos");
+        } else {
+            JButton boton1 = new JButton("Tarjeta");
+            boton1.addActionListener(e -> {
+                // Acción al pulsar el botón 1 (abrir archivo 1)
+                direc.setVisible(false);
 
-    Object[] opciones = {boton1, boton2};
-    JOptionPane.showOptionDialog(null, "Selecciona un método de pago:", "Método de pago",
-            JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, opciones[0]);
-    }
-       
-    
-    public void volverTarjeta(){
-    tarjeta.setVisible(false);
-    direc.setVisible(true);
-    }
-     public void siguienteTarjeta(){
-    tarjeta.setVisible(false);
-    completado.setVisible(true);
-    }
-     public void volverPaypal(){
-     paypal.setVisible(false);
-     direc.setVisible(true);
-     }
-     public void siguientePaypal(){
-     paypal.setVisible(false);
-     completado.setVisible(true);
-     }
-      public void imprimir(){
-     paypal.setVisible(false);
-     direc.setVisible(true);
-     }
-     public void volverCompletado(){
-     completado.setVisible(false);
-     cata.setVisible(true);
-     }
-     public void Ticket(){
-    String nombre = log.logNombre.getText();
-         try {
-             PDDocument documento = new PDDocument();
-             PDPage pagina = new PDPage(PDRectangle.A6);
-             documento.addPage(pagina);
-             PDPageContentStream contenido = new PDPageContentStream(documento, pagina);
+                tarjeta.setVisible(true);
+            });
 
-             contenido.beginText();
-             contenido.setFont(PDType1Font.TIMES_BOLD, 18);
-             contenido.newLineAtOffset(20, pagina.getMediaBox().getHeight() - 52);
-             contenido.showText("Gracias por la compra " + nombre);
-             contenido.endText();
-             contenido.beginText();
-             contenido.setFont(PDType1Font.TIMES_BOLD, 18);
-             contenido.newLineAtOffset(20, pagina.getMediaBox().getHeight() - 100);
-             contenido.showText("Usted compró " + sel);
-             contenido.endText();
-             contenido.beginText();
-             contenido.setFont(PDType1Font.TIMES_BOLD, 18);
-             contenido.newLineAtOffset(20, pagina.getMediaBox().getHeight() - 150);
-             contenido.showText("Por el precio " + precioTicket);
-             contenido.endText();
-             contenido.beginText();
-             contenido.setFont(PDType1Font.TIMES_BOLD, 18);
-             contenido.newLineAtOffset(20, pagina.getMediaBox().getHeight() - 200);
-             contenido.showText("Vuelva pronto");
-             contenido.endText();
-             contenido.close();
+            JButton boton2 = new JButton("Paypal");
+            boton2.addActionListener(e -> {
+                // Acción al pulsar el botón 2 (abrir archivo 2)
+                direc.setVisible(false);
 
-        documento.save("../JavaProyecto/prueba.pdf");
-    } catch (Exception x) {
-        System.out.println("Error al imprimir el código");
+                paypal.setVisible(true);
+            });
+
+            Object[] opciones = {boton1, boton2};
+            JOptionPane.showOptionDialog(null, "Selecciona un método de pago:", "Método de pago",
+                    JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, opciones[0]);
+        }
     }
-}
-     public void perfil(){
-         
-         String nombre=log.logNombre.getText();
+
+    public void volverTarjeta() {
+        tarjeta.setVisible(false);
+        direc.setVisible(true);
+    }
+
+    public void siguienteTarjeta() {
+        if (tarjeta.tarjCVV.getText().equals("") || tarjeta.tarjCVV.getText().equals("") || tarjeta.tarjCorreo.getText().equals("") || tarjeta.tarjFecha.getText().equals("") || tarjeta.tarjNombre.getText().equals("") || tarjeta.tarjNum.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Rellena todos los campos");
+        } else {
+            tarjeta.setVisible(false);
+            completado.setVisible(true);
+        }
+    }
+
+    public void volverPaypal() {
+        paypal.setVisible(false);
+        direc.setVisible(true);
+    }
+
+    public void siguientePaypal() {
+        if (paypal.PaypalCorreo.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Rellena todos los campos");
+        } else {
+            paypal.setVisible(false);
+            completado.setVisible(true);
+        }
+    }
+
+    public void imprimir() {
+        paypal.setVisible(false);
+        direc.setVisible(true);
+    }
+
+    public void volverCompletado() {
+        completado.setVisible(false);
+        cata.setVisible(true);
+    }
+    //Mediante la libreria "pdf-box" de Apache realizamos la impresion de un archivo PDF con los datos del usuario y con lo que compro
+
+    public void Ticket() {
+        String nombre = log.logNombre.getText();
+        try {
+            PDDocument documento = new PDDocument();
+            PDPage pagina = new PDPage(PDRectangle.A6);
+            documento.addPage(pagina);
+            PDPageContentStream contenido = new PDPageContentStream(documento, pagina);
+
+            contenido.beginText();
+            contenido.setFont(PDType1Font.TIMES_BOLD, 18);
+            contenido.newLineAtOffset(20, pagina.getMediaBox().getHeight() - 52);
+            contenido.showText("Gracias por la compra " + nombre);
+            contenido.endText();
+            contenido.beginText();
+            contenido.setFont(PDType1Font.TIMES_BOLD, 18);
+            contenido.newLineAtOffset(20, pagina.getMediaBox().getHeight() - 100);
+            contenido.showText("Usted compró " + sel);
+            contenido.endText();
+            contenido.beginText();
+            contenido.setFont(PDType1Font.TIMES_BOLD, 18);
+            contenido.newLineAtOffset(20, pagina.getMediaBox().getHeight() - 150);
+            contenido.showText("Por el precio " + precioTicket);
+            contenido.endText();
+            contenido.beginText();
+            contenido.setFont(PDType1Font.TIMES_BOLD, 18);
+            contenido.newLineAtOffset(20, pagina.getMediaBox().getHeight() - 200);
+            contenido.showText("Vuelva pronto");
+            contenido.endText();
+            contenido.close();
+
+            documento.save("./JavaProyecto/Ticket.pdf");
+        } catch (Exception x) {
+            System.out.println("Error al imprimir el código" + x);
+        }
+    }
+    //Mediante el setText cambiamos el texto de una Jlabel para que te de la bienbenida con el nombre del usuario
+
+    public void perfil() {
+
+        String nombre = log.logNombre.getText();
         Per.perfilNombre.setText(nombre);
-     }
-     
-     
+    }
 
+    //Aqui recogemos los datos que el usuario quiere registrar 
     public void Ingreso() {
         String us = log.logNombre.getText();
         String pw = log.logContraseña.getText();
-        if(us.equals("") || pw.equals("")){
-        JOptionPane.showMessageDialog(null, "Rellena todos los campos");
-        }else{
-        if (met.Autentificacion(us, pw)) {
-            log.setVisible(false);
-            cata.setVisible(true);
-            JOptionPane.showMessageDialog(null, "Usuario logueado");
+        //Si el usuario deja algun campo vacio que salga un error
+        if (us.equals("") || pw.equals("")) {
+            JOptionPane.showMessageDialog(null, "Rellena todos los campos");
+            //Ysi no que se realize el metodo Autentificacion
         } else {
-            JOptionPane.showMessageDialog(null, "Usuario no registrado");
-        }
+            if (met.Autentificacion(us, pw)) {
+                log.setVisible(false);
+                cata.setVisible(true);
+                JOptionPane.showMessageDialog(null, "Usuario logueado");
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuario no registrado");
+            }
         }
     }
 
+    //Aqui hacemos que cuando se presione un boton haga la accion correcta 
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -558,175 +611,168 @@ public class controlador implements ActionListener {
             irLogin();
         }
         if (e.getSource() == cns.NoSesion1) {
-           LoginCns();
+            LoginCns();
         }
         if (e.getSource() == cns2.NoSesion2) {
-           LoginCns2();
+            LoginCns2();
         }
         if (e.getSource() == cns.PS1) {
-           PS1();
+            PS1();
         }
         if (e.getSource() == cns2.PS2) {
-           PS2();
+            PS2();
         }
         if (e.getSource() == cata.Perfil) {
             perfil();
-           irPerfil();
+            irPerfil();
         }
         if (e.getSource() == Per.volverCatalogo) {
-           volverCa();
+            volverCa();
         }
         if (e.getSource() == cata.irCata2) {
-           ircata2();
+            ircata2();
         }
         if (e.getSource() == cata2.Perfil2) {
-           irperfil2();
+            irperfil2();
         }
         if (e.getSource() == cata2.volverCata1) {
-           volverCata1();
+            volverCata1();
         }
         if (e.getSource() == cata.Biphone) {
-           irIphone();
+            irIphone();
         }
         if (e.getSource() == cata.bCaña) {
-           irCaña();
+            irCaña();
         }
         if (e.getSource() == cata.bPS5) {
-           irPS5();
+            irPS5();
         }
         if (e.getSource() == cata.bPendientes) {
-           irPendientes();
+            irPendientes();
         }
         if (e.getSource() == cata.bRolex) {
-           irRolex();
+            irRolex();
         }
         if (e.getSource() == cata.bXBOX) {
-           irXBOX();
+            irXBOX();
         }
-        if (e.getSource()== cata2.bAmazon){
-        irAmazon();
+        if (e.getSource() == cata2.bAmazon) {
+            irAmazon();
         }
-        if (e.getSource()== cata2.bAnillo){
-        irAnillo();
+        if (e.getSource() == cata2.bAnillo) {
+            irAnillo();
         }
-        if (e.getSource()== cata2.bCasio){
-        irCasio();
+        if (e.getSource() == cata2.bCasio) {
+            irCasio();
         }
-        if (e.getSource()== cata2.bChanel){
-        irChanel();
+        if (e.getSource() == cata2.bChanel) {
+            irChanel();
         }
-        if (e.getSource()== cata2.bNokia){
-        irNokia();
+        if (e.getSource() == cata2.bNokia) {
+            irNokia();
         }
-        if (e.getSource()== cata2.bVolante){
-        irVolante();
+        if (e.getSource() == cata2.bVolante) {
+            irVolante();
         }
-        if (e.getSource()== Amazon.VolverAmazon){
-        volverAmazon();
+        if (e.getSource() == Amazon.VolverAmazon) {
+            volverAmazon();
         }
-        if (e.getSource()== Anillo.volverAnillo){
-        volverAnillo();
+        if (e.getSource() == Anillo.volverAnillo) {
+            volverAnillo();
         }
-        if (e.getSource()== Casio.volverCasio){
-        volverCasio();
+        if (e.getSource() == Casio.volverCasio) {
+            volverCasio();
         }
-        if (e.getSource()== Caña.volverCaña){
-        volverCaña();
+        if (e.getSource() == Caña.volverCaña) {
+            volverCaña();
         }
-        if (e.getSource()== Iphone.volverIphone){
-        volverIphone();
+        if (e.getSource() == Iphone.volverIphone) {
+            volverIphone();
         }
-        if (e.getSource()== Nokia.volverNokia){
-        volverNokia();
+        if (e.getSource() == Nokia.volverNokia) {
+            volverNokia();
         }
-        if (e.getSource()== PS5.volverPS5){
-        volverPS5();
+        if (e.getSource() == PS5.volverPS5) {
+            volverPS5();
         }
-        if (e.getSource()== Pendientes.volverPendientes){
-        volverPendientes();
+        if (e.getSource() == Pendientes.volverPendientes) {
+            volverPendientes();
         }
-        if (e.getSource()== Rolex.volverRolex){
-        volverRolex();
+        if (e.getSource() == Rolex.volverRolex) {
+            volverRolex();
         }
-        if (e.getSource()== Volante.volverVolante){
-        volverVolante();
+        if (e.getSource() == Volante.volverVolante) {
+            volverVolante();
         }
-        if (e.getSource()== XBOX.volverXBOX){
-        volverXBOX();
+        if (e.getSource() == XBOX.volverXBOX) {
+            volverXBOX();
         }
-         if (e.getSource()== Chanel.volverChanel){
-        volverChanel();
-        }
-         
-         
-         if (e.getSource()== Amazon.comprarAmazon){
-        comprarAmazon();
-        }
-        if (e.getSource()== Anillo.comprarAnillo){
-        comprarAnillo();
-        }
-        if (e.getSource()== Casio.comprarCasio){
-        comprarCasio();
-        }
-        if (e.getSource()== Caña.comprarCaña){
-        comprarCaña();
-        }
-        if (e.getSource()== Iphone.comprarIphone){
-       comprarIphone();
-        }
-        if (e.getSource()== Nokia.comprarNokia){
-        comprarNokia();
-        }
-        if (e.getSource()== PS5.comprarPS5){
-        comprarPS5();
-        }
-        if (e.getSource()== Pendientes.comprarPendientes){
-        comprarPendientes();
-        }
-        if (e.getSource()== Rolex.comprarRolex){
-        comprarRolex();
-        }
-        if (e.getSource()== Volante.comprarVolante){
-        comprarVolante();
-        }
-        if (e.getSource()== XBOX.comprarXBOX){
-       comprarXBOX();
-        }
-         if (e.getSource()== Chanel.comprarChanel){
-        comprarChanel();
-        }
-       if (e.getSource()== direc.dirVolver){
-        volverDireccion();
-        }
-       if (e.getSource()== direc.dirSiguiente){
-       siguienteDireccion();
-        }
-       if (e.getSource()== tarjeta.volverTarjeta){
-       volverTarjeta();
-        }
-       if (e.getSource()== tarjeta.siguienteTarjeta){
-       siguienteTarjeta();
-        }
-       if (e.getSource()== paypal.volverPaypal){
-       volverTarjeta();
-        }
-       if (e.getSource()== paypal.siguientePaypal){
-       siguienteTarjeta();
-        }
-       
-       if (e.getSource()== completado.volverCompletado){
-        volverCompletado();
-        }
-       if (e.getSource()== completado.imprimir){
-        Ticket();
-        
+        if (e.getSource() == Chanel.volverChanel) {
+            volverChanel();
         }
 
-        
+        if (e.getSource() == Amazon.comprarAmazon) {
+            comprarAmazon();
+        }
+        if (e.getSource() == Anillo.comprarAnillo) {
+            comprarAnillo();
+        }
+        if (e.getSource() == Casio.comprarCasio) {
+            comprarCasio();
+        }
+        if (e.getSource() == Caña.comprarCaña) {
+            comprarCaña();
+        }
+        if (e.getSource() == Iphone.comprarIphone) {
+            comprarIphone();
+        }
+        if (e.getSource() == Nokia.comprarNokia) {
+            comprarNokia();
+        }
+        if (e.getSource() == PS5.comprarPS5) {
+            comprarPS5();
+        }
+        if (e.getSource() == Pendientes.comprarPendientes) {
+            comprarPendientes();
+        }
+        if (e.getSource() == Rolex.comprarRolex) {
+            comprarRolex();
+        }
+        if (e.getSource() == Volante.comprarVolante) {
+            comprarVolante();
+        }
+        if (e.getSource() == XBOX.comprarXBOX) {
+            comprarXBOX();
+        }
+        if (e.getSource() == Chanel.comprarChanel) {
+            comprarChanel();
+        }
+        if (e.getSource() == direc.dirVolver) {
+            volverDireccion();
+        }
+        if (e.getSource() == direc.dirSiguiente) {
+            siguienteDireccion();
+        }
+        if (e.getSource() == tarjeta.volverTarjeta) {
+            volverTarjeta();
+        }
+        if (e.getSource() == tarjeta.siguienteTarjeta) {
+            siguienteTarjeta();
+        }
+        if (e.getSource() == paypal.volverPaypal) {
+            volverTarjeta();
+        }
+        if (e.getSource() == paypal.siguientePaypal) {
+            siguientePaypal();
+        }
+
+        if (e.getSource() == completado.volverCompletado) {
+            volverCompletado();
+        }
+        if (e.getSource() == completado.imprimir) {
+            Ticket();
+
+        }
+
     }
 }
-        
-        
-    
-
-
