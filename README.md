@@ -28,16 +28,88 @@ La idea del proyecto es crear una aplicación de una tienda en la cual los usuar
 
 ```mermaid
 classDiagram
-  direction RL
-  class Main {
+  class Controlador {
+    - met: Metodos
+    - x: Usuario
+    - log: Login
+    - reg: Registro
+    - cata: CatalogoEstilo
+    --
+    + Controlador(log: Login, reg: Registro, user: Usuario)
+    + Registrar()
+    + Ingreso()
+    + actionPerformed(e: ActionEvent)
   }
+  
+  class Metodos {
+    + InsertarUsuario(x: Usuario): boolean
+    + Autentificacion(Puser: String, Ppsw: String): boolean
+  }
+  
+  class Usuario {
+    - Nombre: String
+    - Apellidos: String
+    - Contraseña: String
+    - Correo: String
+    + getNombre(): String
+    + getApellidos(): String
+    + getContraseña(): String
+    + getCorreo(): String
+  }
+  
+  class Conexion {
+    + Conectar(): Connection
+  }
+  
+  class Login {
+    + logNombre
+    + logContraseña
+    + btnLogin
+    + IrRegistrarse
+  }
+  
+  class Registro {
+    + txtNombre
+    + txtApellidos
+    + txtPass
+    + txtCorreo
+    + btnRegistrarse
+  }
+  
+  class CatalogoEstilo {
+    // atributos y métodos de la clase CatalogoEstilo
+  }
+  
+  Controlador --> ActionListener
+  Controlador --> Metodos
+  Controlador --> Usuario
+  Controlador --> Login
+  Controlador --> Registro
+  Controlador --> CatalogoEstilo
+  Metodos --> Conexion
 ```
 
 ### Diagrama de secuencia:
 
 ```mermaid
 sequenceDiagram
-    participant Main
+    participant CatalogoNoSesion
+    participant Usuario
+    participant Login
+    participant CatalogoEstilo
+
+    Usuario->>CatalogoNoSesion: Iniciar sesión
+    CatalogoNoSesion-->>Login: Permiso Concedido
+    Login->>CatalogoEstilo: Realizar solicitud
+
+    alt Solicitud fallida
+        Login-->>Usuario: Procesando solicitud
+        Usuario-->>Login: Confirmar acción
+        Login-->>Usuario: Acción fallida (Cuenta Inexistente)
+        Usuario->>Login: Registrar usuario
+        Login-->>Usuario: Solicitud completada
+    end
+    Login->>CatalogoEstilo: Permiso concedido
 ```
 
 Muchas gracias por el tiempo que has empleado leyendo esta breve introducción a nuestro proyecto, si deseas ver más informacióna acerca de lo que fue el desarrollo de todo el proyecto puedes acceder a ella desde nuestra página de [Wiki](https://github.com/PachecoASIR/ProyectoTiendaV2/wiki).
