@@ -93,7 +93,23 @@ classDiagram
 
 ```mermaid
 sequenceDiagram
-    participant Main
+    participant CatalogoNoSesion
+    participant Usuario
+    participant Login
+    participant CatalogoEstilo
+
+    Usuario->>CatalogoNoSesion: Iniciar sesión
+    CatalogoNoSesion-->>Login: Permiso Concedido
+    Login->>CatalogoEstilo: Realizar solicitud
+
+    alt Solicitud fallida
+        Login-->>Usuario: Procesando solicitud
+        Usuario-->>Login: Confirmar acción
+        Login-->>Usuario: Acción fallida (Cuenta Inexistente)
+        Usuario->>Login: Registrar usuario
+        Login-->>Usuario: Solicitud completada
+    end
+    Login->>CatalogoEstilo: Permiso concedido
 ```
 
 Muchas gracias por el tiempo que has empleado leyendo esta breve introducción a nuestro proyecto, si deseas ver más informacióna acerca de lo que fue el desarrollo de todo el proyecto puedes acceder a ella desde nuestra página de [Wiki](https://github.com/PachecoASIR/ProyectoTiendaV2/wiki).
