@@ -444,35 +444,35 @@ public class CatalogoEstilo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-     public static void main(String args[]) {
-                usuario user = new usuario();
+    public static void main(String args[]) {
+        usuario user = new usuario();
         Login log = new Login();
         Registro reg = new Registro();
         CatalogoNoSesion cns = new CatalogoNoSesion();
         CatalogoNoSesion2 cns2 = new CatalogoNoSesion2();
         CatalogoEstilo cata = new CatalogoEstilo();
         CatalogoEstilo2 cata2 = new CatalogoEstilo2();
-        Perfil Per =new Perfil();
+        Perfil Per = new Perfil();
         Amazon Amazon = new Amazon();
-    Anillo Anillo = new Anillo();
-    Casio Casio = new Casio();
-    Caña Caña = new Caña();
-    Chanel Chanel = new Chanel();
-    Iphone Iphone = new Iphone();
-    Nokia Nokia = new Nokia();
-    PS5 PS5  = new PS5 ();
-    Pendientes Pendientes = new Pendientes();
-    Rolex Rolex = new Rolex();
-    Volante Volante = new Volante();
-    XBOX XBOX  = new XBOX ();
-    //OTROS
-    Direccion direc = new Direccion();
-    Paypal paypal = new Paypal();
-    Tarjeta tarjeta = new Tarjeta();
-Completado completado = new Completado();
-        controlador con = new controlador(log, reg, user,cns,cns2,cata,cata2,Per,Amazon,Anillo,Casio,Caña,Chanel,Iphone,Nokia,PS5,Pendientes,Rolex,Volante,XBOX,direc,paypal,tarjeta,completado);
+        Anillo Anillo = new Anillo();
+        Casio Casio = new Casio();
+        Caña Caña = new Caña();
+        Chanel Chanel = new Chanel();
+        Iphone Iphone = new Iphone();
+        Nokia Nokia = new Nokia();
+        PS5 PS5 = new PS5();
+        Pendientes Pendientes = new Pendientes();
+        Rolex Rolex = new Rolex();
+        Volante Volante = new Volante();
+        XBOX XBOX = new XBOX();
+        //OTROS
+        Direccion direc = new Direccion();
+        Paypal paypal = new Paypal();
+        Tarjeta tarjeta = new Tarjeta();
+        Completado completado = new Completado();
+        controlador con = new controlador(log, reg, user, cns, cns2, cata, cata2, Per, Amazon, Anillo, Casio, Caña, Chanel, Iphone, Nokia, PS5, Pendientes, Rolex, Volante, XBOX, direc, paypal, tarjeta, completado);
         cata.setVisible(true);
-        
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -485,40 +485,40 @@ Completado completado = new Completado();
         }
 
         java.awt.EventQueue.invokeLater(() -> {
-            
+
         });
     }
-     
+
     private void PerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PerfilActionPerformed
-               
+
     }//GEN-LAST:event_PerfilActionPerformed
 
     private void BiphoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BiphoneActionPerformed
-       
+
     }//GEN-LAST:event_BiphoneActionPerformed
 
     private void irCata2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_irCata2ActionPerformed
-         
+
     }//GEN-LAST:event_irCata2ActionPerformed
 
     private void bRolexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRolexActionPerformed
-         
+
     }//GEN-LAST:event_bRolexActionPerformed
 
     private void bPS5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPS5ActionPerformed
-         
+
     }//GEN-LAST:event_bPS5ActionPerformed
 
     private void bXBOXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bXBOXActionPerformed
-         
+
     }//GEN-LAST:event_bXBOXActionPerformed
 
     private void bCañaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCañaActionPerformed
-        
+
      }//GEN-LAST:event_bCañaActionPerformed
 
     private void bPendientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPendientesActionPerformed
-         
+
     }//GEN-LAST:event_bPendientesActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -449,37 +449,37 @@ public class CatalogoEstilo2 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-     public static void main(String args[]) {
-         usuario user = new usuario();
-         Login log = new Login();
-         Registro reg = new Registro();
-         CatalogoNoSesion cns = new CatalogoNoSesion();
-         CatalogoNoSesion2 cns2 = new CatalogoNoSesion2();
-         CatalogoEstilo cata = new CatalogoEstilo();
-         CatalogoEstilo2 cata2 = new CatalogoEstilo2();
-         Perfil Per = new Perfil();
-         Amazon Amazon = new Amazon();
-         Anillo Anillo = new Anillo();
-         Casio Casio = new Casio();
-         Caña Caña = new Caña();
-         Chanel Chanel = new Chanel();
-         Iphone Iphone = new Iphone();
-         Nokia Nokia = new Nokia();
-         PS5 PS5 = new PS5();
-         Pendientes Pendientes = new Pendientes();
-         Rolex Rolex = new Rolex();
-         Volante Volante = new Volante();
-         XBOX XBOX = new XBOX();
-         //OTROS
-         Direccion direc = new Direccion();
-         Paypal paypal = new Paypal();
-         Tarjeta tarjeta = new Tarjeta();
-         Completado completado = new Completado();
+    public static void main(String args[]) {
+        usuario user = new usuario();
+        Login log = new Login();
+        Registro reg = new Registro();
+        CatalogoNoSesion cns = new CatalogoNoSesion();
+        CatalogoNoSesion2 cns2 = new CatalogoNoSesion2();
+        CatalogoEstilo cata = new CatalogoEstilo();
+        CatalogoEstilo2 cata2 = new CatalogoEstilo2();
+        Perfil Per = new Perfil();
+        Amazon Amazon = new Amazon();
+        Anillo Anillo = new Anillo();
+        Casio Casio = new Casio();
+        Caña Caña = new Caña();
+        Chanel Chanel = new Chanel();
+        Iphone Iphone = new Iphone();
+        Nokia Nokia = new Nokia();
+        PS5 PS5 = new PS5();
+        Pendientes Pendientes = new Pendientes();
+        Rolex Rolex = new Rolex();
+        Volante Volante = new Volante();
+        XBOX XBOX = new XBOX();
+        //OTROS
+        Direccion direc = new Direccion();
+        Paypal paypal = new Paypal();
+        Tarjeta tarjeta = new Tarjeta();
+        Completado completado = new Completado();
 
-         controlador con = new controlador(log, reg, user, cns, cns2, cata, cata2, Per, Amazon, Anillo, Casio, Caña, Chanel, Iphone, Nokia, PS5, Pendientes, Rolex, Volante, XBOX, direc, paypal, tarjeta,completado);
-         cata2.setVisible(true);
+        controlador con = new controlador(log, reg, user, cns, cns2, cata, cata2, Per, Amazon, Anillo, Casio, Caña, Chanel, Iphone, Nokia, PS5, Pendientes, Rolex, Volante, XBOX, direc, paypal, tarjeta, completado);
+        cata2.setVisible(true);
 
-         try {
+        try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -491,40 +491,40 @@ public class CatalogoEstilo2 extends javax.swing.JFrame {
         }
 
         java.awt.EventQueue.invokeLater(() -> {
-            
+
         });
     }
-     
+
     private void Perfil2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Perfil2ActionPerformed
-        
+
     }//GEN-LAST:event_Perfil2ActionPerformed
 
     private void bNokiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNokiaActionPerformed
-      
+
     }//GEN-LAST:event_bNokiaActionPerformed
 
     private void volverCata1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverCata1ActionPerformed
-       
+
     }//GEN-LAST:event_volverCata1ActionPerformed
 
     private void bCasioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCasioActionPerformed
-       
+
     }//GEN-LAST:event_bCasioActionPerformed
 
     private void bAnilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAnilloActionPerformed
-       
+
     }//GEN-LAST:event_bAnilloActionPerformed
 
     private void bChanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bChanelActionPerformed
-        
+
     }//GEN-LAST:event_bChanelActionPerformed
 
     private void bVolanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVolanteActionPerformed
-        
+
     }//GEN-LAST:event_bVolanteActionPerformed
 
     private void bAmazonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAmazonActionPerformed
-        
+
     }//GEN-LAST:event_bAmazonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

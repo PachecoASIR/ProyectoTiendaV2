@@ -4,7 +4,6 @@
  */
 package Vista;
 
-
 import Controlador.controlador;
 import Modelo.metodos;
 import Modelo.usuario;
@@ -22,12 +21,25 @@ public class Login extends javax.swing.JFrame {
      * Creates new form Login
      */
     public Login() {
+        // Inicializar los componentes de la interfaz gráfica
         initComponents();
+
+        // Establecer el título de la ventana
         this.setTitle("Cuerdotoo");
+
+        // Desactivar la capacidad de cambiar el tamaño de la ventana
         this.setResizable(false);
+
+        // Cargar y establecer el icono de la ventana
         Image img = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Images/Logo2.png"));
+
+        // Redimensionar la imagen del icono
         Image resizedImg = img.getScaledInstance(60, 50, Image.SCALE_SMOOTH);
+
+        // Crear un ImageIcon a partir de la imagen redimensionada
         ImageIcon icono = new ImageIcon(resizedImg);
+
+        // Establecer el icono de la ventana
         this.setIconImage(icono.getImage());
     }
 
@@ -178,8 +190,6 @@ public class Login extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        
-    
         usuario user = new usuario();
         Login log = new Login();
         Registro reg = new Registro();
@@ -187,26 +197,26 @@ public class Login extends javax.swing.JFrame {
         CatalogoNoSesion2 cns2 = new CatalogoNoSesion2();
         CatalogoEstilo cata = new CatalogoEstilo();
         CatalogoEstilo2 cata2 = new CatalogoEstilo2();
-        Perfil Per =new Perfil();
+        Perfil Per = new Perfil();
         Amazon Amazon = new Amazon();
-    Anillo Anillo = new Anillo();
-    Casio Casio = new Casio();
-    Caña Caña = new Caña();
-    Chanel Chanel = new Chanel();
-    Iphone Iphone = new Iphone();
-    Nokia Nokia = new Nokia();
-    PS5 PS5  = new PS5 ();
-    Pendientes Pendientes = new Pendientes();
-    Rolex Rolex = new Rolex();
-    Volante Volante = new Volante();
-    XBOX XBOX  = new XBOX ();
-    //OTROS
-    Direccion direc = new Direccion();
-    Paypal paypal = new Paypal();
-    Tarjeta tarjeta = new Tarjeta();
-    Completado completado = new Completado();
+        Anillo Anillo = new Anillo();
+        Casio Casio = new Casio();
+        Caña Caña = new Caña();
+        Chanel Chanel = new Chanel();
+        Iphone Iphone = new Iphone();
+        Nokia Nokia = new Nokia();
+        PS5 PS5 = new PS5();
+        Pendientes Pendientes = new Pendientes();
+        Rolex Rolex = new Rolex();
+        Volante Volante = new Volante();
+        XBOX XBOX = new XBOX();
+        //OTROS
+        Direccion direc = new Direccion();
+        Paypal paypal = new Paypal();
+        Tarjeta tarjeta = new Tarjeta();
+        Completado completado = new Completado();
 
-        controlador con = new controlador(log, reg, user,cns,cns2,cata,cata2,Per,Amazon,Anillo,Casio,Caña,Chanel,Iphone,Nokia,PS5,Pendientes,Rolex,Volante,XBOX,direc,paypal,tarjeta,completado);
+        controlador con = new controlador(log, reg, user, cns, cns2, cata, cata2, Per, Amazon, Anillo, Casio, Caña, Chanel, Iphone, Nokia, PS5, Pendientes, Rolex, Volante, XBOX, direc, paypal, tarjeta, completado);
         log.setVisible(true);
 
         java.awt.EventQueue.invokeLater(new Runnable() {

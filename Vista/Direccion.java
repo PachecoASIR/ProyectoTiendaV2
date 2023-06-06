@@ -22,12 +22,25 @@ public class Direccion extends javax.swing.JFrame {
      * Creates new form Direccion
      */
     public Direccion() {
+        // Inicializar los componentes de la interfaz gráfica
         initComponents();
+
+        // Establecer el título de la ventana
         this.setTitle("Cuerdotoo");
+
+        // Desactivar la capacidad de cambiar el tamaño de la ventana
         this.setResizable(false);
+
+        // Cargar y establecer el icono de la ventana
         Image img = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Images/Logo2.png"));
+
+        // Redimensionar la imagen del icono
         Image resizedImg = img.getScaledInstance(60, 50, Image.SCALE_SMOOTH);
+
+        // Crear un ImageIcon a partir de la imagen redimensionada
         ImageIcon icono = new ImageIcon(resizedImg);
+
+        // Establecer el icono de la ventana
         this.setIconImage(icono.getImage());
     }
 
@@ -43,7 +56,7 @@ public class Direccion extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jTextField1 = new javax.swing.JTextField();
+        dirPais = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         dirVolver = new javax.swing.JButton();
@@ -54,12 +67,12 @@ public class Direccion extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
+        dirTel = new javax.swing.JTextField();
+        dirDir = new javax.swing.JTextField();
+        dirNombre = new javax.swing.JTextField();
+        dirCode = new javax.swing.JTextField();
+        dirProvincia = new javax.swing.JTextField();
+        dirCity = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
@@ -75,8 +88,8 @@ public class Direccion extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel1.setText("País/Región");
 
-        jTextField1.setToolTipText("");
-        jTextField1.setBorder(null);
+        dirPais.setToolTipText("");
+        dirPais.setBorder(null);
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -141,23 +154,23 @@ public class Direccion extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel9.setText("Provincia");
 
-        jTextField2.setToolTipText("");
-        jTextField2.setBorder(null);
+        dirTel.setToolTipText("");
+        dirTel.setBorder(null);
 
-        jTextField3.setToolTipText("");
-        jTextField3.setBorder(null);
+        dirDir.setToolTipText("");
+        dirDir.setBorder(null);
 
-        jTextField4.setToolTipText("");
-        jTextField4.setBorder(null);
+        dirNombre.setToolTipText("");
+        dirNombre.setBorder(null);
 
-        jTextField5.setToolTipText("");
-        jTextField5.setBorder(null);
+        dirCode.setToolTipText("");
+        dirCode.setBorder(null);
 
-        jTextField6.setToolTipText("");
-        jTextField6.setBorder(null);
+        dirProvincia.setToolTipText("");
+        dirProvincia.setBorder(null);
 
-        jTextField7.setToolTipText("");
-        jTextField7.setBorder(null);
+        dirCity.setToolTipText("");
+        dirCity.setBorder(null);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -181,33 +194,33 @@ public class Direccion extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(jLabel1)
                                         .addComponent(jSeparator1)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE))
+                                        .addComponent(dirPais, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE))
                                     .addComponent(jLabel7))
                                 .addGap(175, 175, 175)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8)
                                     .addComponent(jLabel4)
-                                    .addComponent(jTextField2)
+                                    .addComponent(dirTel)
                                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE))
+                            .addComponent(dirDir, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE))
                         .addGap(205, 205, 205))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
+                                .addComponent(dirNombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
                                 .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dirCode, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                                        .addComponent(dirProvincia, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
                                         .addComponent(jSeparator5)
                                         .addComponent(jSeparator8)))
                                 .addGap(90, 90, 90)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jSeparator7)
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(dirCity, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -227,21 +240,21 @@ public class Direccion extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addGap(8, 8, 8)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(dirPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dirTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dirNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dirDir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
@@ -250,8 +263,8 @@ public class Direccion extends javax.swing.JFrame {
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dirCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dirCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jSeparator7, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
@@ -259,7 +272,7 @@ public class Direccion extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dirProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
@@ -287,18 +300,18 @@ public class Direccion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void dirSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirSiguienteActionPerformed
-        
+
     }//GEN-LAST:event_dirSiguienteActionPerformed
 
     private void dirVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dirVolverActionPerformed
-      
+
     }//GEN-LAST:event_dirVolverActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-                           usuario user = new usuario();
+        usuario user = new usuario();
         Login log = new Login();
         Registro reg = new Registro();
         CatalogoNoSesion cns = new CatalogoNoSesion();
@@ -324,18 +337,25 @@ public class Direccion extends javax.swing.JFrame {
         Tarjeta tarjeta = new Tarjeta();
         Completado completado = new Completado();
 
-        controlador con = new controlador(log, reg, user, cns, cns2, cata, cata2, Per, Amazon, Anillo, Casio, Caña, Chanel, Iphone, Nokia, PS5, Pendientes, Rolex, Volante, XBOX, direc, paypal, tarjeta,completado);
-         direc.setVisible(true);
-        
+        controlador con = new controlador(log, reg, user, cns, cns2, cata, cata2, Per, Amazon, Anillo, Casio, Caña, Chanel, Iphone, Nokia, PS5, Pendientes, Rolex, Volante, XBOX, direc, paypal, tarjeta, completado);
+        direc.setVisible(true);
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-              
+
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField dirCity;
+    public javax.swing.JTextField dirCode;
+    public javax.swing.JTextField dirDir;
+    public javax.swing.JTextField dirNombre;
+    public javax.swing.JTextField dirPais;
+    public javax.swing.JTextField dirProvincia;
     public javax.swing.JButton dirSiguiente;
+    public javax.swing.JTextField dirTel;
     public javax.swing.JButton dirVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -355,12 +375,5 @@ public class Direccion extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
 }

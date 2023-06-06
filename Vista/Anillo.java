@@ -20,12 +20,25 @@ public class Anillo extends javax.swing.JFrame {
      * Creates new form FichaBase
      */
     public Anillo() {
+        // Inicializar los componentes de la interfaz gráfica
         initComponents();
+
+        // Establecer el título de la ventana
         this.setTitle("Cuerdotoo");
+
+        // Desactivar la capacidad de cambiar el tamaño de la ventana
         this.setResizable(false);
+
+        // Cargar y establecer el icono de la ventana
         Image img = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Images/Logo2.png"));
+
+        // Redimensionar la imagen del icono
         Image resizedImg = img.getScaledInstance(60, 50, Image.SCALE_SMOOTH);
+
+        // Crear un ImageIcon a partir de la imagen redimensionada
         ImageIcon icono = new ImageIcon(resizedImg);
+
+        // Establecer el icono de la ventana
         this.setIconImage(icono.getImage());
     }
 
@@ -100,6 +113,7 @@ public class Anillo extends javax.swing.JFrame {
             }
         });
 
+        jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(0, 0, 0));
         jTextArea1.setColumns(20);
         jTextArea1.setForeground(new java.awt.Color(204, 204, 0));
@@ -264,14 +278,14 @@ public class Anillo extends javax.swing.JFrame {
     }//GEN-LAST:event_comprarAnilloActionPerformed
 
     private void volverAnilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAnilloActionPerformed
-       
+
     }//GEN-LAST:event_volverAnilloActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-                  usuario user = new usuario();
+        usuario user = new usuario();
         Login log = new Login();
         Registro reg = new Registro();
         CatalogoNoSesion cns = new CatalogoNoSesion();
@@ -297,11 +311,11 @@ public class Anillo extends javax.swing.JFrame {
         Tarjeta tarjeta = new Tarjeta();
         Completado completado = new Completado();
 
-        controlador con = new controlador(log, reg, user, cns, cns2, cata, cata2, Per, Amazon, Anillo, Casio, Caña, Chanel, Iphone, Nokia, PS5, Pendientes, Rolex, Volante, XBOX, direc, paypal, tarjeta,completado);
+        controlador con = new controlador(log, reg, user, cns, cns2, cata, cata2, Per, Amazon, Anillo, Casio, Caña, Chanel, Iphone, Nokia, PS5, Pendientes, Rolex, Volante, XBOX, direc, paypal, tarjeta, completado);
         Anillo.setVisible(true);
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
+
             }
         });
     }
