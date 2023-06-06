@@ -1,6 +1,5 @@
 package Modelo;
 
-
 public class usuario {
     
     private String nombre;
@@ -13,6 +12,7 @@ public class usuario {
     }
 
     public void setNombre(String nombre) {
+        // Establecer el nombre del usuario
         this.nombre = nombre;
     }
 
@@ -21,6 +21,7 @@ public class usuario {
     }
 
     public void setApellidos(String apellido) {
+        // Establecer los apellidos del usuario
         this.apellidos = apellido;
     }
 
@@ -29,6 +30,7 @@ public class usuario {
     }
 
     public void setContraseña(String contraseña) {
+        // Establecer la contraseña del usuario
         this.contraseña = contraseña;
     }
 
@@ -37,9 +39,8 @@ public class usuario {
     }
 
     public void setCorreo(String correo) {
+        // Establecer el correo electrónico del usuario
         this.correo = correo;
-    }
-    
-    
-    
+    }   
 }
+
