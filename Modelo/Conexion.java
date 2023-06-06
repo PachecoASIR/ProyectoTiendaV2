@@ -3,8 +3,6 @@ package Modelo;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-
-
 public class Conexion {
     public Connection con = null;
     
@@ -12,16 +10,21 @@ public class Conexion {
     
     Connection cn=null;
     try{
-    Class.forName("com.mysql.cj.jdbc.Driver");
-    cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
+        // Cargar el controlador JDBC específico para MySQL
+        Class.forName("com.mysql.cj.jdbc.Driver");
         
+        // Establecer la conexión a la base de datos
+        cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
         
     }catch (Exception e){
-    System.out.println(String.valueOf(e));
+        // Capturar cualquier excepción que pueda ocurrir durante la carga del controlador o la conexión
+        // e imprimir el mensaje de error
+        System.out.println(String.valueOf(e));
     
     }
-         return cn;   
     
+    // Devolver el objeto de conexión
+    return cn;   
     }
 
 }
